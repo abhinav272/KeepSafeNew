@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible" />
+
+    <com.andrognito.pinlockview.IndicatorDots
+        android:id="@+id/indicator_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp" />
+
+    <com.andrognito.pinlockview.PinLockView
+        android:id="@+id/pin_lock_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/indicator_dots"
+        android:layout_centerHorizontal="true"
+        app:dotDiameter="12dp"
+        app:dotEmptyBackground="@drawable/dot_empty"
+        app:dotFilledBackground="@drawable/dot_filled"
+        app:dotSpacing="16dp"
+        app:keypadButtonSize="72dp"
+        app:keypadDeleteButtonSize="16dp"
+        app:keypadTextColor="@color/colorAccent"
+        app:keypadTextSize="30dp"
+        app:pinLength="4" />
+
+</RelativeLayout>
