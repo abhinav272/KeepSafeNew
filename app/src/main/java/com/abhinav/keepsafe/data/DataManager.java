@@ -42,4 +42,9 @@ public class DataManager implements IDataManager {
     public String getSavedPin() {
         return mPreferenceHelper.getUserPin();
     }
+
+    @Override
+    public void fetchAllCategories() {
+
+    }
 }

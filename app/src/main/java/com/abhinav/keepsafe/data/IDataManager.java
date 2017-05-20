@@ -7,4 +7,6 @@ public interface IDataManager {
 
     void savePin(String pin);
     String getSavedPin();
+
+    void fetchAllCategories();
 }
