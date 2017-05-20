@@ -3,7 +3,7 @@ package com.abhinav.keepsafe;
 /**
  * Created by Abhinav on 23/04/17.
  */
-public interface BasePresenter {
+public interface IBasePresenter {
 
     /**
      * call start() when fragment or activity is about to interact with user
