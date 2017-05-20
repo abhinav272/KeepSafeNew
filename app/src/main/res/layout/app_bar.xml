@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
-    app:titleTextColor="@android:color/white"
+    android:titleTextColor="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/actionBarSize"
     app:theme="@style/ThemeOverlay.AppCompat.Dark"
