@@ -27,4 +27,8 @@ public class BaseFragment extends Fragment {
     public void setupToolbar(Toolbar toolbar){
         getActivity().setActionBar(toolbar);
     }
+
+    public void setToolbarTitle(int titleResId) {
+        getActivity().getActionBar().setTitle(titleResId);
+    }
 }
