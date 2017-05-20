@@ -23,6 +23,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
     private Context context;
     private RecyclerView recyclerView;
     private Toolbar toolbar;
+    private HomeContract.IPresenter mPresenter;
 
     @Override
     public void onAttach(Context context) {
@@ -33,6 +34,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        mPresenter = new HomePresenter();
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -41,7 +43,9 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
         super.onViewCreated(view, savedInstanceState);
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         setupToolbar(toolbar);
+        setToolbarTitle(R.string.home_fragment_title);
         setHasOptionsMenu(true);
+        showCategories();
 
     }
 
@@ -74,7 +78,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
 
     @Override
     public void showCategories() {
-
+        mPresenter.fetchAllCategories();
     }
 
     @Override

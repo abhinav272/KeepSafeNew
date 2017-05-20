@@ -16,7 +16,7 @@ public interface HomeContract {
 
     interface IPresenter extends IBasePresenter {
         void fetchAllCategories();
-        void addNewCategories();
+        void addNewCategory();
         void fetchCategoriesListing();
     }
 }
