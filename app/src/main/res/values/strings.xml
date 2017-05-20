@@ -7,4 +7,5 @@
     <string name="pin_saved_successfully">PIN SAVED</string>
     <string name="login_success">LOGIN SUCCESSFUL</string>
     <string name="add_category">Add Category</string>
+    <string name="home_fragment_title">CATEGORIES</string>
 </resources>
