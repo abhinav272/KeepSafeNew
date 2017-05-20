@@ -11,7 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abhinav.keepsafe.BaseFragment;
+import com.abhinav.keepsafe.Constants;
 import com.abhinav.keepsafe.R;
+import com.abhinav.keepsafe.home.HomeActivity;
+import com.abhinav.keepsafe.navigation.NavigationRequest;
+import com.abhinav.keepsafe.navigation.Navigator;
+import com.abhinav.keepsafe.onboard.OnBoardActivity;
 import com.andrognito.pinlockview.IndicatorDots;
 import com.andrognito.pinlockview.PinLockListener;
 import com.andrognito.pinlockview.PinLockView;
@@ -27,7 +32,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.IView {
     private IndicatorDots mIndicatorDots;
     private TextView tvBanner;
     private String pin1, pin2;
-    private Context context;
+    private OnBoardActivity context;
 
     @Nullable
     @Override
@@ -50,7 +55,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.IView {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.context = context;
+        this.context = (OnBoardActivity) context;
     }
 
     @Override
@@ -143,6 +148,10 @@ public class LoginFragment extends BaseFragment implements LoginContract.IView {
 
     @Override
     public void navigateToHome() {
-
+        NavigationRequest navigateToHomeRequest = new NavigationRequest.Builder()
+                .setNavigateTo(Constants.NavigateTo.HOME)
+                .setLaunchedBy(Constants.LaunchedBy.LOGIN).build();
+        Navigator.navigateTo(context, navigateToHomeRequest);
+        context.finish();
     }
 }
