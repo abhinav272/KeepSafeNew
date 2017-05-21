@@ -10,6 +10,7 @@ import com.abhinav.keepsafe.KeepSafe;
 public class DataManager implements IDataManager {
 
     private PreferenceHelper mPreferenceHelper;
+    private DataBaseHelper mDataBaseHelper;
     private static volatile DataManager mDataManager;
 
     private DataManager() {
@@ -18,6 +19,7 @@ public class DataManager implements IDataManager {
         else {
             // initialize all data sources;
             mPreferenceHelper = new PreferenceHelper();
+            mDataBaseHelper = DataBaseHelper.getsInstance();
         }
     }
 
