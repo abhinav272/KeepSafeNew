@@ -17,4 +17,9 @@ public final class Constants {
         public static final String LOGIN = "login";
         public static final String HOME = "home";
     }
+
+    public static final class Database {
+        public static final String DATABASE_NAME = "keepsafe_db";
+        public static final int DATABASE_VERSION = 1;
+    }
 }
