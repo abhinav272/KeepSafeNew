@@ -8,4 +8,8 @@
     <string name="login_success">LOGIN SUCCESSFUL</string>
     <string name="add_category">Add Category</string>
     <string name="home_fragment_title">CATEGORIES</string>
+    <string name="options_menu_item_bank">Bank</string>
+    <string name="options_menu_item_email">eMail</string>
+    <string name="options_menu_item_social_network">Social</string>
+    <string name="options_menu_item_others">Others</string>
 </resources>
