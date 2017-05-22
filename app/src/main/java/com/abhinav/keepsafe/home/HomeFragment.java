@@ -10,10 +10,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
+import com.abhinav.keepsafe.pojo.Category;
+
+import java.util.List;
 
 /**
  * Created by Abhinav on 13/05/17.
@@ -22,6 +26,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
 
     private Context context;
     private RecyclerView recyclerView;
+    private ImageView ivNoView;
     private Toolbar toolbar;
     private HomeContract.IPresenter mPresenter;
 
@@ -41,12 +46,18 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        setupUI(view);
         setupToolbar(toolbar);
         setToolbarTitle(R.string.home_fragment_title);
         setHasOptionsMenu(true);
         showCategories();
 
+    }
+
+    private void setupUI(View view) {
+        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rv_categories);
+        ivNoView = (ImageView) view.findViewById(R.id.iv_no_view);
     }
 
     @Override
@@ -57,7 +68,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_add:
                 showMessage("Add category");
                 break;
@@ -78,7 +89,20 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
 
     @Override
     public void showCategories() {
-        mPresenter.fetchAllCategories();
+        List<Category> categories = mPresenter.fetchAllCategories();
+        if (categories.size() > 0) {
+
+            if (ivNoView.getVisibility() == View.VISIBLE)
+                ivNoView.setVisibility(View.GONE);
+            if (recyclerView.getVisibility() == View.GONE)
+                recyclerView.setVisibility(View.VISIBLE);
+
+
+
+        } else {
+            recyclerView.setVisibility(View.GONE);
+            ivNoView.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
