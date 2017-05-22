@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <include
@@ -25,5 +26,30 @@
         android:layout_centerInParent="true"
         android:src="@drawable/svg_no_categories"
         android:visibility="gone" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:src="@drawable/ic_add"
+        android:tint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.hlab.fabrevealmenu.view.FABRevealMenu
+        android:id="@+id/fabMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        app:animateItems="true"
+        app:menuBackgroundColor="@color/colorAccent"
+        app:menuDirection="left"
+        app:menuRes="@menu/menu_home"
+        app:menuTitleTextColor="@color/white"
+        app:showOverlay="true"
+        app:showTitle="true" />
 
 </RelativeLayout>

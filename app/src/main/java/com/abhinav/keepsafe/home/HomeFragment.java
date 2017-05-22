@@ -3,6 +3,7 @@ package com.abhinav.keepsafe.home;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,18 +17,22 @@ import android.widget.Toolbar;
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.pojo.Category;
+import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
+import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
 import java.util.List;
 
 /**
  * Created by Abhinav on 13/05/17.
  */
-public class HomeFragment extends BaseFragment implements HomeContract.IView {
+public class HomeFragment extends BaseFragment implements HomeContract.IView, OnFABMenuSelectedListener {
 
     private Context context;
     private RecyclerView recyclerView;
     private ImageView ivNoView;
     private Toolbar toolbar;
+    private FloatingActionButton fab;
+    private FABRevealMenu fabRevealMenu;
     private HomeContract.IPresenter mPresenter;
 
     @Override
@@ -58,23 +63,17 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_categories);
         ivNoView = (ImageView) view.findViewById(R.id.iv_no_view);
-    }
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fabRevealMenu = (FABRevealMenu) view.findViewById(R.id.fabMenu);
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_home, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_add:
-                showMessage("Add category");
-                break;
-
+        try {
+            if (fab!=null && fabRevealMenu!=null){
+                fabRevealMenu.bindAncherView(fab);
+                fabRevealMenu.setOnFABMenuSelectedListener(this);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -108,5 +107,14 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView {
     @Override
     public void showCategoryListing() {
 
+    }
+
+    @Override
+    public void onMenuItemSelected(View view) {
+        switch (view.getId()){
+            case R.id.action_bank:
+                showMessage("yo");
+                break;
+        }
     }
 }
