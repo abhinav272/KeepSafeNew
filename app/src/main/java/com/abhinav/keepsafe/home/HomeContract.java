@@ -2,6 +2,9 @@ package com.abhinav.keepsafe.home;
 
 import com.abhinav.keepsafe.IBasePresenter;
 import com.abhinav.keepsafe.IBaseView;
+import com.abhinav.keepsafe.pojo.Category;
+
+import java.util.List;
 
 /**
  * Created by Abhinav on 13/05/17.
@@ -15,7 +18,7 @@ public interface HomeContract {
     }
 
     interface IPresenter extends IBasePresenter {
-        void fetchAllCategories();
+        List<Category> fetchAllCategories();
         void addNewCategory();
         void fetchCategoriesListing();
     }

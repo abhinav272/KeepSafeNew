@@ -1,8 +1,8 @@
 package com.abhinav.keepsafe.data;
 
-import android.content.Context;
+import com.abhinav.keepsafe.pojo.Category;
 
-import com.abhinav.keepsafe.KeepSafe;
+import java.util.List;
 
 /**
  * Created by Abhinav on 23/04/17.
@@ -46,7 +46,7 @@ public class DataManager implements IDataManager {
     }
 
     @Override
-    public void fetchAllCategories() {
-
+    public List<Category> fetchAllCategories() {
+        return mDataBaseHelper.getAllCategories();
     }
 }
