@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/app_bar"/>
+        layout="@layout/app_bar" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/toolbar"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:id="@+id/rv_categories"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:paddingBottom="10dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp" />
 
+    <ImageView
+        android:id="@+id/iv_no_view"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/svg_no_categories"
+        android:visibility="gone" />
 
 </RelativeLayout>
