@@ -32,7 +32,7 @@ public class HomePresenter implements HomeContract.IPresenter {
     }
 
     @Override
-    public void fetchCategoriesListing() {
+    public void addNewListing(int categoryId) {
 
     }
 }
