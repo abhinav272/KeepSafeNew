@@ -95,9 +95,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
                 ivNoView.setVisibility(View.GONE);
             if (recyclerView.getVisibility() == View.GONE)
                 recyclerView.setVisibility(View.VISIBLE);
-
-
-
         } else {
             recyclerView.setVisibility(View.GONE);
             ivNoView.setVisibility(View.VISIBLE);
@@ -105,16 +102,26 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
     }
 
     @Override
-    public void showCategoryListing() {
+    public void onMenuItemSelected(View view) {
+        int id = (int) view.getTag();
+        switch (id){
+            case R.id.action_bank:
 
+                break;
+            case R.id.action_email:
+
+                break;
+            case R.id.action_social_network:
+
+                break;
+            case R.id.action_others:
+
+                break;
+        }
     }
 
     @Override
-    public void onMenuItemSelected(View view) {
-        switch (view.getId()){
-            case R.id.action_bank:
-                showMessage("yo");
-                break;
-        }
+    public void showCategoryListingFragment(int categoryId) {
+
     }
 }
