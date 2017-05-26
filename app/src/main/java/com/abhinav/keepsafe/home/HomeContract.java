@@ -14,12 +14,12 @@ public interface HomeContract {
     interface IView extends IBaseView<IPresenter> {
         void showMessage(String msg);
         void showCategories();
-        void showCategoryListing();
+        void showCategoryListingFragment(int categoryId);
     }
 
     interface IPresenter extends IBasePresenter {
         List<Category> fetchAllCategories();
         void addNewCategory();
-        void fetchCategoriesListing();
+        void addNewListing(int categoryId);
     }
 }
