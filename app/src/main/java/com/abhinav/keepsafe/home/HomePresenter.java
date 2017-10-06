@@ -25,14 +25,4 @@ public class HomePresenter implements HomeContract.IPresenter {
     public List<Category> fetchAllCategories() {
         return mDataManager.fetchAllCategories();
     }
-
-    @Override
-    public void addNewCategory() {
-
-    }
-
-    @Override
-    public void addNewListing(int categoryId) {
-
-    }
 }
