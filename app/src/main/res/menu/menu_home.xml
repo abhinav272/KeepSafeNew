@@ -17,6 +17,11 @@
         android:title="@string/options_menu_item_social_network" />
 
     <item
+        android:id="@+id/action_ecommerce"
+        android:icon="@drawable/ic_ecommerce"
+        android:title="@string/options_menu_item_ecommerce"/>
+
+    <item
         android:id="@+id/action_others"
         android:icon="@drawable/ic_others"
         android:title="@string/options_menu_item_others" />

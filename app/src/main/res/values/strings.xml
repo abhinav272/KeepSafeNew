@@ -12,4 +12,5 @@
     <string name="options_menu_item_email">eMail</string>
     <string name="options_menu_item_social_network">Social</string>
     <string name="options_menu_item_others">Others</string>
+    <string name="options_menu_item_ecommerce">eCommerce</string>
 </resources>
