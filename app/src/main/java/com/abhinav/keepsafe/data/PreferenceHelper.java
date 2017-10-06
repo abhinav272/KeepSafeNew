@@ -8,7 +8,7 @@ import com.abhinav.keepsafe.KeepSafe;
 /**
  * Created by Abhinav on 23/04/17.
  */
-public class PreferenceHelper implements IPreferenceHelper {
+class PreferenceHelper implements IPreferenceHelper {
 
 
     public static final String NAME = "keep_safe_prefs";
