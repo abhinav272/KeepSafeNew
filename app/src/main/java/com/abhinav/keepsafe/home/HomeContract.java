@@ -15,11 +15,11 @@ public interface HomeContract {
         void showMessage(String msg);
         void showCategories();
         void showCategoryListingFragment(int categoryId);
+        void showAddListingFragment(int categoryId);
     }
 
     interface IPresenter extends IBasePresenter {
         List<Category> fetchAllCategories();
-        void addNewCategory();
-        void addNewListing(int categoryId);
+
     }
 }
