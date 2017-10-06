@@ -114,6 +114,9 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
             case R.id.action_social_network:
 
                 break;
+            case R.id.action_ecommerce:
+
+                break;
             case R.id.action_others:
 
                 break;
@@ -122,6 +125,11 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
 
     @Override
     public void showCategoryListingFragment(int categoryId) {
+
+    }
+
+    @Override
+    public void showAddListingFragment(int categoryId) {
 
     }
 }
