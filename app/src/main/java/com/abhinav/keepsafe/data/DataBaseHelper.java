@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by Abhinav on 21/05/17.
  */
-public class DataBaseHelper extends SQLiteOpenHelper implements IDatabaseHelper {
+class DataBaseHelper extends SQLiteOpenHelper implements IDatabaseHelper {
 
     private static final String TAG = "DataBaseHelper";
     private static volatile DataBaseHelper sInstance;
