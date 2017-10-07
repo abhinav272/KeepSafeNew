@@ -16,20 +16,28 @@ public class Bank {
 
     @ColumnInfo(name = "bank_name")
     private String bankName;
+
     @ColumnInfo(name = "account_type")
     private String accountType;
+
     @ColumnInfo(name = "account_number")
     private String accountNumber;
+
     @ColumnInfo(name = "debit_card_number")
     private String debitCardNumber;
+
     @ColumnInfo(name = "credit_card_number")
     private String creditCardNumber;
+
     @ColumnInfo(name = "debit_card_pin")
     private String debitCardPin;
+
     @ColumnInfo(name = "credit_card_pin")
     private String creditCardPin;
+
     @ColumnInfo(name = "customer_id")
     private String customerId;
+
     @ColumnInfo(name = "net_banking_password")
     private String netBankingPassword;
 
