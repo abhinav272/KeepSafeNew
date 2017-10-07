@@ -1,5 +1,9 @@
 package com.abhinav.keepsafe.data;
 
+import android.arch.lifecycle.LiveData;
+
+import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.Email;
 import com.abhinav.keepsafe.pojo.Category;
 
 import java.util.List;
@@ -12,5 +16,22 @@ public interface IDataManager {
     void savePin(String pin);
     String getSavedPin();
 
-    List<Category> fetchAllCategories();
+    /**
+     * BankDAO methods
+     * */
+    LiveData<List<Bank>> fetchAllBanks();
+    LiveData<Bank> fetchBankDetails();
+    void addBank(Bank bank);
+    void updateBank(Bank bank);
+    void deleteBank(Bank bank);
+
+    /**
+     * EmailDAO methods
+     * */
+    LiveData<List<Email>> fetchAllEmails();
+    LiveData<Email> fetchEmailDetails();
+    void addEmail(Email email);
+    void updateEmail(Email email);
+    void deleteEmail(Email email);
+
 }
