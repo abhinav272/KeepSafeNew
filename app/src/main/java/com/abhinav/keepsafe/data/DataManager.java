@@ -19,7 +19,7 @@ public class DataManager implements IDataManager {
         else {
             // initialize all data sources;
             mPreferenceHelper = new PreferenceHelper();
-            mDataBaseHelper = DataBaseHelper.getsInstance();
+            mDataBaseHelper = DataBaseHelper.getInstance();
         }
     }
 
