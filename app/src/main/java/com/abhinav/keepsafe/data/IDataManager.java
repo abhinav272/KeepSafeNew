@@ -20,7 +20,7 @@ public interface IDataManager {
      * BankDAO methods
      * */
     LiveData<List<Bank>> fetchAllBanks();
-    LiveData<Bank> fetchBankDetails();
+    LiveData<Bank> fetchBankDetails(int bankId);
     void addBank(Bank bank);
     void updateBank(Bank bank);
     void deleteBank(Bank bank);
@@ -29,7 +29,7 @@ public interface IDataManager {
      * EmailDAO methods
      * */
     LiveData<List<Email>> fetchAllEmails();
-    LiveData<Email> fetchEmailDetails();
+    LiveData<Email> fetchEmailDetails(int emailId);
     void addEmail(Email email);
     void updateEmail(Email email);
     void deleteEmail(Email email);
