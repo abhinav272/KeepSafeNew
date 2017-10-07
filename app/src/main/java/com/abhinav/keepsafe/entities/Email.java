@@ -4,11 +4,13 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.abhinav.keepsafe.Constants;
+
 /**
  * Created by abhinav.sharma on 07/10/17.
  */
 
-@Entity
+@Entity(tableName = Constants.Database.T_EMAIL)
 public class Email {
 
     @PrimaryKey(autoGenerate = true)
