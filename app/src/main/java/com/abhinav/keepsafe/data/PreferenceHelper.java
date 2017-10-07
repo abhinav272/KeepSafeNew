@@ -8,7 +8,7 @@ import com.abhinav.keepsafe.KeepSafe;
 /**
  * Created by Abhinav on 23/04/17.
  */
-class PreferenceHelper implements IPreferenceHelper {
+class PreferenceHelper {
 
 
     public static final String NAME = "keep_safe_prefs";
@@ -19,12 +19,10 @@ class PreferenceHelper implements IPreferenceHelper {
         sharedPreferences = KeepSafe.getInstance().getSharedPreferences(PreferenceHelper.NAME, Context.MODE_PRIVATE);
     }
 
-    @Override
     public void saveUserPin(String pin) {
         sharedPreferences.edit().putString(USER_PIN, pin).apply();
     }
 
-    @Override
     public String getUserPin() {
         return sharedPreferences.getString(USER_PIN, null);
     }
