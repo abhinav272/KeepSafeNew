@@ -23,7 +23,7 @@ public interface EmailDao {
     @Query("SELECT * FROM " + Constants.Database.T_EMAIL)
     LiveData<List<Email>> getAllEmails();
 
-    @Query("SELECT * FROM " + Constants.Database.T_EMAIL + "WHERE id = :id")
+    @Query("SELECT * FROM t_email WHERE id = :id")
     LiveData<Email> getEmailDetails(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

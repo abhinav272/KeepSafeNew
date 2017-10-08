@@ -23,7 +23,7 @@ public interface BankDao {
     @Query("SELECT * FROM " + Constants.Database.T_BANK)
     LiveData<List<Bank>> getAllBanks();
 
-    @Query("SELECT * FROM " + Constants.Database.T_BANK + "WHERE id = :id")
+    @Query("SELECT * FROM t_bank WHERE id = :id")
     LiveData<Bank> getBankDetails(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

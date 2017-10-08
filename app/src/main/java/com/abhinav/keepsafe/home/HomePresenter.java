@@ -23,6 +23,6 @@ public class HomePresenter implements HomeContract.IPresenter {
 
     @Override
     public List<Category> fetchAllCategories() {
-        return mDataManager.fetchAllCategories();
+        return null;
     }
 }

@@ -89,7 +89,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
     @Override
     public void showCategories() {
         List<Category> categories = mPresenter.fetchAllCategories();
-        if (categories.size() > 0) {
+        if (categories!=null && categories.size() > 0) {
 
             if (ivNoView.getVisibility() == View.VISIBLE)
                 ivNoView.setVisibility(View.GONE);
