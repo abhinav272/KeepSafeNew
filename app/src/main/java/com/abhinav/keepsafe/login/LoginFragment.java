@@ -59,9 +59,9 @@ public class LoginFragment extends BaseFragment implements LoginView {
 
     @Override
     public void setupLockView(View view) {
-        tvBanner = (TextView) view.findViewById(R.id.tv_banner);
-        mPinLockView = (PinLockView) view.findViewById(R.id.pin_lock_view);
-        mIndicatorDots = (IndicatorDots) view.findViewById(R.id.indicator_dots);
+        tvBanner =  view.findViewById(R.id.tv_banner);
+        mPinLockView =  view.findViewById(R.id.pin_lock_view);
+        mIndicatorDots =  view.findViewById(R.id.indicator_dots);
 
         if (mIndicatorDots != null) {
             mIndicatorDots.setPinLength(4);
