@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.abhinav.keepsafe.BaseFragment;
@@ -83,7 +84,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
 
     @Override
     public void showMessage(String msg) {
-        showToast(msg);
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
