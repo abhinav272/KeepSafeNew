@@ -2,6 +2,7 @@
     <string name="app_name">KeepSafe</string>
     <string name="confirm_pin_string">CONFIRM PIN</string>
     <string name="choose_pin_string">CREATE NEW PIN</string>
+    <string name="enter_pin_string">ENTER PIN</string>
     <string name="invalid_pin_msg">INVALID PIN</string>
     <string name="pin_mismatch">PIN MISMATCH</string>
     <string name="pin_saved_successfully">PIN SAVED</string>
