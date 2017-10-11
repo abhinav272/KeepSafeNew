@@ -4,20 +4,17 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
-import com.abhinav.keepsafe.pojo.Category;
+import com.abhinav.keepsafe.adapter.CTAAdapter;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
@@ -26,7 +23,7 @@ import java.util.List;
 /**
  * Created by Abhinav on 13/05/17.
  */
-public class HomeFragment extends BaseFragment implements HomeContract.IView, OnFABMenuSelectedListener {
+public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSelectedListener {
 
     private Context context;
     private RecyclerView recyclerView;
@@ -34,7 +31,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
     private Toolbar toolbar;
     private FloatingActionButton fab;
     private FABRevealMenu fabRevealMenu;
-    private HomeContract.IPresenter mPresenter;
+    private HomePresenter mPresenter;
 
     @Override
     public void onAttach(Context context) {
@@ -45,7 +42,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        mPresenter = new HomePresenter();
+        mPresenter = new HomePresenter(this);
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -54,58 +51,49 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
         super.onViewCreated(view, savedInstanceState);
         setupUI(view);
         setupToolbar(toolbar);
-        setToolbarTitle(R.string.home_fragment_title);
+        setToolbarTitle(R.string.app_name);
         setHasOptionsMenu(true);
-        showCategories();
+        mPresenter.initView();
 
     }
 
     private void setupUI(View view) {
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        recyclerView = (RecyclerView) view.findViewById(R.id.rv_categories);
-        ivNoView = (ImageView) view.findViewById(R.id.iv_no_view);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fabRevealMenu = (FABRevealMenu) view.findViewById(R.id.fabMenu);
+        toolbar = view.findViewById(R.id.toolbar);
+        recyclerView = view.findViewById(R.id.rv_ctas);
+        ivNoView = view.findViewById(R.id.iv_no_view);
+        fab = view.findViewById(R.id.fab);
+        fabRevealMenu = view.findViewById(R.id.fabMenu);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         try {
-            if (fab!=null && fabRevealMenu!=null){
+            if (fab != null && fabRevealMenu != null) {
                 fabRevealMenu.bindAncherView(fab);
                 fabRevealMenu.setOnFABMenuSelectedListener(this);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @Override
-    public void setPresenter(HomeContract.IPresenter presenter) {
-
-    }
-
-    @Override
-    public void showMessage(String msg) {
-        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showCategories() {
-        List<Category> categories = mPresenter.fetchAllCategories();
-        if (categories!=null && categories.size() > 0) {
-
-            if (ivNoView.getVisibility() == View.VISIBLE)
-                ivNoView.setVisibility(View.GONE);
-            if (recyclerView.getVisibility() == View.GONE)
-                recyclerView.setVisibility(View.VISIBLE);
-        } else {
-            recyclerView.setVisibility(View.GONE);
-            ivNoView.setVisibility(View.VISIBLE);
-        }
-    }
+//    @Override
+//    public void showCategories() {
+//        List<Category> categories = mPresenter.fetchAllCategories();
+//        if (categories!=null && categories.size() > 0) {
+//
+//            if (ivNoView.getVisibility() == View.VISIBLE)
+//                ivNoView.setVisibility(View.GONE);
+//            if (recyclerView.getVisibility() == View.GONE)
+//                recyclerView.setVisibility(View.VISIBLE);
+//        } else {
+//            recyclerView.setVisibility(View.GONE);
+//            ivNoView.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     @Override
     public void onMenuItemSelected(View view) {
         int id = (int) view.getTag();
-        switch (id){
+        switch (id) {
             case R.id.action_bank:
 
                 break;
@@ -125,12 +113,11 @@ public class HomeFragment extends BaseFragment implements HomeContract.IView, On
     }
 
     @Override
-    public void showCategoryListingFragment(int categoryId) {
-
+    public void showAllCTAs(List<String> ctaList) {
+        recyclerView.setAdapter(getCTAAdapter(ctaList));
     }
 
-    @Override
-    public void showAddListingFragment(int categoryId) {
-
+    private CTAAdapter getCTAAdapter(List<String> ctaLists) {
+        return new CTAAdapter(context, ctaLists);
     }
 }
