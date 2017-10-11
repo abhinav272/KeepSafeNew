@@ -12,14 +12,10 @@ import java.util.List;
 public interface HomeContract {
 
     interface IView extends IBaseView<IPresenter> {
-        void showMessage(String msg);
-        void showCategories();
-        void showCategoryListingFragment(int categoryId);
-        void showAddListingFragment(int categoryId);
+        void showAllCTAs();
     }
 
     interface IPresenter extends IBasePresenter {
-        List<Category> fetchAllCategories();
 
     }
 }
