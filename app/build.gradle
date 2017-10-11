@@ -42,4 +42,6 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha9-1"
     compile 'io.reactivex.rxjava2:rxjava:2.1.2'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
