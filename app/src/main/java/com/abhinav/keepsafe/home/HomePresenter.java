@@ -37,4 +37,8 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModelL
     public List<String> fetchAllCategories() {
         return Arrays.asList("BANK", "EMAIL", "SOCIAL NETWORK", "E-COMMERCE", "OTHERS");
     }
+
+    public void showCategoryFragment(int position) {
+        getView().navigateToCategoryFragment(position);
+    }
 }
