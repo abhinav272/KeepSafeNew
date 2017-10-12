@@ -20,10 +20,16 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
     private Context context;
     private LayoutInflater inflater;
     private List<String> ctaLists;
+    private OnItemClick onItemClick;
 
-    public CTAAdapter(Context context, List<String> ctaLists) {
+    public interface OnItemClick{
+        void delegateClickEvent(int position);
+    }
+
+    public CTAAdapter(Context context, List<String> ctaLists, OnItemClick onItemClick) {
         this.context = context;
         this.ctaLists = ctaLists;
+        this.onItemClick = onItemClick;
         inflater = LayoutInflater.from(context);
     }
 
@@ -35,9 +41,10 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(CTAViewHolder holder, int position) {
+    public void onBindViewHolder(CTAViewHolder holder, final int position) {
         holder.ivCTAImage.setImageResource(R.drawable.svg_no_categories);
         holder.tvCTATitle.setText(getItem(position));
+        holder.ivCTAImage.setOnClickListener(v -> onItemClick.delegateClickEvent(position));
     }
 
     @Override
