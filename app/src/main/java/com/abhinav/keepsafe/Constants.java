@@ -7,6 +7,7 @@ public final class Constants {
 
     public static final class ExtrasKey{
         public static final String INTENT_EXTRA_BUNDLE = "intent_extra_bundle";
+        public static final String SELECTED_CATEGORY_POSITION = "selected_category";
     }
 
     public static final class NavigateTo{
