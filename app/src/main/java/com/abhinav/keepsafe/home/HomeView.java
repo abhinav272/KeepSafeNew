@@ -10,5 +10,6 @@ import java.util.List;
 public interface HomeView extends IBaseView{
 
     void showAllCTAs(List<String> ctaList);
-
+    void onCTAClicked(int position);
+    void navigateToCategoryFragment(int position);
 }

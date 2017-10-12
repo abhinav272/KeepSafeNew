@@ -12,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toolbar;
 
+import com.abhinav.keepsafe.BaseActivity;
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.CTAAdapter;
+import com.abhinav.keepsafe.home.category.CategoryFragment;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
@@ -23,7 +25,7 @@ import java.util.List;
 /**
  * Created by Abhinav on 13/05/17.
  */
-public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSelectedListener {
+public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSelectedListener, CTAAdapter.OnItemClick {
 
     private Context context;
     private RecyclerView recyclerView;
@@ -118,6 +120,28 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     }
 
     private CTAAdapter getCTAAdapter(List<String> ctaLists) {
-        return new CTAAdapter(context, ctaLists);
+        return new CTAAdapter(context, ctaLists, this);
+    }
+
+    @Override
+    public void delegateClickEvent(int position) {
+        onCTAClicked(position);
+    }
+
+    @Override
+    public void onCTAClicked(int position) {
+        mPresenter.showCategoryFragment(position);
+    }
+
+    @Override
+    public void navigateToCategoryFragment(int position) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), CategoryFragment.getInstance(position),
+                R.id.frame_container, CategoryFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mPresenter.detachView();
     }
 }
