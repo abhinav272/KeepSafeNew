@@ -14,4 +14,9 @@
     <string name="options_menu_item_social_network">Social</string>
     <string name="options_menu_item_others">Others</string>
     <string name="options_menu_item_ecommerce">eCommerce</string>
+    <string name="category_bank">BANK</string>
+    <string name="category_email">EMAIL</string>
+    <string name="category_social_network">SOCIAL NETWORK</string>
+    <string name="category_e_commerce">E-COMMERCE</string>
+    <string name="category_others">OTHERS</string>
 </resources>
