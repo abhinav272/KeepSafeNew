@@ -47,7 +47,7 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModelL
     }
 
     public void onAddEmailClicked() {
-//        getView().showAddEmailFragment();
+        getView().showAddEmailFragment();
     }
 
     public void onAddSocialNetworkClicked() {
