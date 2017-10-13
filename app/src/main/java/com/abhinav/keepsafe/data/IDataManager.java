@@ -31,7 +31,7 @@ public interface IDataManager {
      * */
     LiveData<List<Email>> fetchAllEmails();
     LiveData<Email> fetchEmailDetails(int emailId);
-    void addEmail(Email email);
+    Observable<Long> addEmail(Email email);
     void updateEmail(Email email);
     void deleteEmail(Email email);
 

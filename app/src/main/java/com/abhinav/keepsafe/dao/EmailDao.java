@@ -27,7 +27,7 @@ public interface EmailDao {
     LiveData<Email> getEmailDetails(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addEmail(Email email);
+    Long addEmail(Email email);
 
     @Update
     void updateEmail(Email email);

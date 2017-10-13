@@ -91,8 +91,10 @@ public class DataManager implements IDataManager {
     }
 
     @Override
-    public void addEmail(Email email) {
-        mDataBaseHelper.getEmailDao().addEmail(email);
+    public Observable<Long> addEmail(Email email) {
+        return Observable.fromCallable(() -> mDataBaseHelper.getEmailDao().addEmail(email))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
