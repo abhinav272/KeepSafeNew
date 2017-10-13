@@ -15,6 +15,6 @@ public class BankViewHolder extends RecyclerView.ViewHolder {
     public TextView tvName;
     public BankViewHolder(View itemView) {
         super(itemView);
-        itemView.findViewById(R.id.tv_name);
+        tvName = itemView.findViewById(R.id.tv_name);
     }
 }
