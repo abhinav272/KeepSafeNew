@@ -27,7 +27,7 @@ public interface BankDao {
     LiveData<Bank> getBankDetails(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void addBank(Bank bank);
+    long addBank(Bank bank);
 
     @Update
     void updateBank(Bank bank);

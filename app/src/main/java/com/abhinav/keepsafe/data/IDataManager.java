@@ -4,9 +4,10 @@ import android.arch.lifecycle.LiveData;
 
 import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.Email;
-import com.abhinav.keepsafe.pojo.Category;
 
 import java.util.List;
+
+import io.reactivex.Observable;
 
 /**
  * Created by Abhinav on 23/04/17.
@@ -21,7 +22,7 @@ public interface IDataManager {
      * */
     LiveData<List<Bank>> fetchAllBanks();
     LiveData<Bank> fetchBankDetails(int bankId);
-    void addBank(Bank bank);
+    Observable<Long> addBank(Bank bank);
     void updateBank(Bank bank);
     void deleteBank(Bank bank);
 

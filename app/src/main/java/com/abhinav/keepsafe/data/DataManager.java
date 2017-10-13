@@ -4,9 +4,13 @@ import android.arch.lifecycle.LiveData;
 
 import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.Email;
-import com.abhinav.keepsafe.pojo.Category;
 
 import java.util.List;
+import java.util.concurrent.Callable;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Abhinav on 23/04/17.
@@ -60,8 +64,10 @@ public class DataManager implements IDataManager {
     }
 
     @Override
-    public void addBank(Bank bank) {
-        mDataBaseHelper.getBankDao().addBank(bank);
+    public Observable<Long> addBank(Bank bank) {
+        return Observable.fromCallable(() -> mDataBaseHelper.getBankDao().addBank(bank))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     @Override
