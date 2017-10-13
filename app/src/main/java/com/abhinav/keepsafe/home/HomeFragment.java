@@ -17,6 +17,7 @@ import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.CTAAdapter;
 import com.abhinav.keepsafe.home.category.CategoryFragment;
+import com.abhinav.keepsafe.home.category.bank.AddBankFragment;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
@@ -97,19 +98,19 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
         int id = (int) view.getTag();
         switch (id) {
             case R.id.action_bank:
-
+                mPresenter.onAddBankClicked();
                 break;
             case R.id.action_email:
-
+                mPresenter.onAddEmailClicked();
                 break;
             case R.id.action_social_network:
-
+                mPresenter.onAddSocialNetworkClicked();
                 break;
             case R.id.action_ecommerce:
-
+                mPresenter.onAddECommerceClicked();
                 break;
             case R.id.action_others:
-
+                mPresenter.onAddOthersClicked();
                 break;
         }
     }
@@ -137,6 +138,12 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     public void navigateToCategoryFragment(int position) {
         ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), CategoryFragment.getInstance(position),
                 R.id.frame_container, CategoryFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void showAddBankFragment() {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), new AddBankFragment(),
+                R.id.frame_container, AddBankFragment.class.getSimpleName());
     }
 
     @Override
