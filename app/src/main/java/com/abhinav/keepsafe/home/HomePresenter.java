@@ -41,4 +41,24 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModelL
     public void showCategoryFragment(int position) {
         getView().navigateToCategoryFragment(position);
     }
+
+    public void onAddBankClicked() {
+        getView().showAddBankFragment();
+    }
+
+    public void onAddEmailClicked() {
+//        getView().showAddEmailFragment();
+    }
+
+    public void onAddSocialNetworkClicked() {
+
+    }
+
+    public void onAddECommerceClicked() {
+
+    }
+
+    public void onAddOthersClicked() {
+
+    }
 }
