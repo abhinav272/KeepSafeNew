@@ -13,4 +13,5 @@ public interface HomeView extends IBaseView{
     void onCTAClicked(int position);
     void navigateToCategoryFragment(int position);
     void showAddBankFragment();
+    void showAddEmailFragment();
 }
