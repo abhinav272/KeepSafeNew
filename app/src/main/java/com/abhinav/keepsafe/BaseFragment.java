@@ -5,12 +5,12 @@ import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.abhinav.keepsafe.base.*;
+import com.abhinav.keepsafe.base.IBaseView;
 
 /**
  * Created by Abhinav on 23/04/17.
  */
-public class BaseFragment extends Fragment implements com.abhinav.keepsafe.base.IBaseView {
+public class BaseFragment extends Fragment implements IBaseView {
 
     public void setupToolbar(Toolbar toolbar) {
         getActivity().setActionBar(toolbar);
