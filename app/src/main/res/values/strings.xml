@@ -28,6 +28,10 @@
     <string name="hint_net_banking_id">Net Banking Login Id</string>
     <string name="hint_net_banking_password">Net Banking Password</string>
     <string name="save">SAVE</string>
+    <string name="hint_email_id">Email ID</string>
+    <string name="hint_email_password">Email Password</string>
+    <string name="hint_recovery_email">Recovery Email</string>
+    <string name="hint_platform_name">Email Client Name (eg. Gmail, Yahoo.)</string>
 
     <!-- Account Types-->
     <string-array name="account_types">
