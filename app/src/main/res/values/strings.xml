@@ -19,4 +19,21 @@
     <string name="category_social_network">SOCIAL NETWORK</string>
     <string name="category_e_commerce">E-COMMERCE</string>
     <string name="category_others">OTHERS</string>
+    <string name="hint_bank_name">Bank Name</string>
+    <string name="hint_account_number">Account Number</string>
+    <string name="hint_debit_card_number">Debit Card Number</string>
+    <string name="hint_credit_card_number">Credit Card Number</string>
+    <string name="hint_debit_card_pin">Debit Card Pin</string>
+    <string name="hint_credit_card_pin">Credit Card Pin</string>
+    <string name="hint_net_banking_id">Net Banking Login Id</string>
+    <string name="hint_net_banking_password">Net Banking Password</string>
+    <string name="save">SAVE</string>
+
+    <!-- Account Types-->
+    <string-array name="account_types">
+        <item name="savings">SAVINGS A/C</item>
+        <item name="current">CURRENT A/C</item>
+        <item name="demat">DEMAT A/C</item>
+    </string-array>
+
 </resources>
