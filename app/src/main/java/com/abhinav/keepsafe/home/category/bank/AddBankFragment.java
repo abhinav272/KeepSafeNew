@@ -48,7 +48,6 @@ public class AddBankFragment extends BaseFragment implements AddBankView {
     TextView tvSave;
     Unbinder unbinder;
     private AddBankPresenter presenter;
-    private Bank bank;
 
 
     @Nullable
@@ -81,7 +80,7 @@ public class AddBankFragment extends BaseFragment implements AddBankView {
     @Override
     public void onSaveClicked() {
         if (fireValidations()) {
-            bank = new Bank();
+            Bank bank = new Bank();
             bank.setBankName(tvBankName.getText().toString().trim());
             bank.setAccountType(tvAccountType.getSelectedItem().toString().trim());
             bank.setAccountNumber(tvAccountNumber.getText().toString().trim());

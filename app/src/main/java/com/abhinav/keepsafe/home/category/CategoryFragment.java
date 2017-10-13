@@ -15,7 +15,9 @@ import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.Constants;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.BankAdapter;
+import com.abhinav.keepsafe.adapter.EmailAdapter;
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.Email;
 
 import java.util.List;
 
@@ -96,10 +98,21 @@ public class CategoryFragment extends BaseFragment implements CategoryView {
     }
 
     @Override
-    public void showBankListing(List<Bank> value) {
+    public void showBankListing(List<Bank> banks) {
         if (ivNoView.getVisibility() == View.VISIBLE)
             ivNoView.setVisibility(View.GONE);
-        rvCategoryItems.setAdapter(getBankAdapter(value));
+        rvCategoryItems.setAdapter(getBankAdapter(banks));
+    }
+
+    @Override
+    public void showEmailListings(List<Email> emails) {
+        if (ivNoView.getVisibility() == View.VISIBLE)
+            ivNoView.setVisibility(View.GONE);
+        rvCategoryItems.setAdapter(getEmailAdapter(emails));
+    }
+
+    private EmailAdapter getEmailAdapter(List<Email> emails) {
+        return new EmailAdapter(context, emails);
     }
 
     private BankAdapter getBankAdapter(List<Bank> value) {

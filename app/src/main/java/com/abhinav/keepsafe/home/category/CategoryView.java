@@ -2,6 +2,7 @@ package com.abhinav.keepsafe.home.category;
 
 import com.abhinav.keepsafe.base.IBaseView;
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.Email;
 
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface CategoryView extends IBaseView {
     void popFragmentOnInvalidChoice();
     void showBankListing(List<Bank> value);
     void showNoItemView();
+    void showEmailListings(List<Email> emails);
 }
