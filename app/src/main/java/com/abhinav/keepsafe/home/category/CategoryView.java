@@ -2,7 +2,9 @@ package com.abhinav.keepsafe.home.category;
 
 import com.abhinav.keepsafe.base.IBaseView;
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
+import com.abhinav.keepsafe.entities.SocialNetwork;
 
 import java.util.List;
 
@@ -17,4 +19,6 @@ public interface CategoryView extends IBaseView {
     void showBankListing(List<Bank> value);
     void showNoItemView();
     void showEmailListings(List<Email> emails);
+    void showSocialNetworkListings(List<SocialNetwork> socialNetworks);
+    void showECommerceListings(List<ECommerce> eCommerces);
 }

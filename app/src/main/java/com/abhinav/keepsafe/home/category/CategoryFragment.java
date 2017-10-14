@@ -15,9 +15,13 @@ import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.Constants;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.BankAdapter;
+import com.abhinav.keepsafe.adapter.ECommerceAdapter;
 import com.abhinav.keepsafe.adapter.EmailAdapter;
+import com.abhinav.keepsafe.adapter.SocialNetworkAdapter;
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
+import com.abhinav.keepsafe.entities.SocialNetwork;
 
 import java.util.List;
 
@@ -109,6 +113,28 @@ public class CategoryFragment extends BaseFragment implements CategoryView {
         if (ivNoView.getVisibility() == View.VISIBLE)
             ivNoView.setVisibility(View.GONE);
         rvCategoryItems.setAdapter(getEmailAdapter(emails));
+    }
+
+    @Override
+    public void showSocialNetworkListings(List<SocialNetwork> socialNetworks) {
+        if (ivNoView.getVisibility() == View.VISIBLE)
+            ivNoView.setVisibility(View.GONE);
+        rvCategoryItems.setAdapter(getSocialNetworkAdapter(socialNetworks));
+    }
+
+    @Override
+    public void showECommerceListings(List<ECommerce> eCommerces) {
+        if (ivNoView.getVisibility() == View.VISIBLE)
+            ivNoView.setVisibility(View.GONE);
+        rvCategoryItems.setAdapter(getECommerceAdapter(eCommerces));
+    }
+
+    private ECommerceAdapter getECommerceAdapter(List<ECommerce> eCommerces) {
+        return new ECommerceAdapter(context, eCommerces);
+    }
+
+    private SocialNetworkAdapter getSocialNetworkAdapter(List<SocialNetwork> socialNetworks) {
+        return new SocialNetworkAdapter(context, socialNetworks);
     }
 
     private EmailAdapter getEmailAdapter(List<Email> emails) {
