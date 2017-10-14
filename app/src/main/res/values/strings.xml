@@ -32,6 +32,23 @@
     <string name="hint_email_password">Email Password</string>
     <string name="hint_recovery_email">Recovery Email</string>
     <string name="hint_platform_name">Email Client Name (eg. Gmail, Yahoo.)</string>
+    <string name="invalid_email">Incorrect Email Id</string>
+    <string name="invalid_email_password">Incorrect Password</string>
+    <string name="invalid_recovery_email">Invalid Recovery Email</string>
+    <string name="invalid_platform">Invalid Email Client</string>
+    <string name="invalid_bank_name">Incorrect Bank Name</string>
+    <string name="invalid_account_number">Invalid Account Number</string>
+    <string name="invalid_cc_number">Invalid Credit Card Number</string>
+    <string name="invalid_debit_card_number">Invalid Debit Card Number</string>
+    <string name="invalid_cc_pin">Invalid Credit Card Pin</string>
+    <string name="invalid_debit_card_pin">Invalid Debit Card Pin</string>
+    <string name="invalid_net_banking_id">Invalid Net Banking Id</string>
+    <string name="invalid_net_banking_password">Invalid Net Banking Password</string>
+    <string name="hint_social_network_name">Social Network Platform</string>
+    <string name="hint_social_network_password">Social Network Password</string>
+    <string name="hint_email_id_used">Email Id Used for SignIn</string>
+    <string name="hint_user_name">Username (if Any)</string>
+    <string name="invalid_social_platform">Invalid Social Platform Name</string>
 
     <!-- Account Types-->
     <string-array name="account_types">

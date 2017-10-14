@@ -24,5 +24,7 @@ public final class Constants {
         public static final int DATABASE_VERSION = 1;
         public static final String T_BANK = "t_bank";
         public static final String T_EMAIL = "t_email";
+        public static final String T_SOCIAL_NETWORK = "t_social_network";
+        public static final String T_ECOMMERCE = "t_ecommerce";
     }
 }
