@@ -2,6 +2,7 @@ package com.abhinav.keepsafe.home.category.bank;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,8 +96,47 @@ public class AddBankFragment extends BaseFragment implements AddBankView {
     }
 
     private boolean fireValidations() {
+        boolean flag = true;
+        if (TextUtils.isEmpty(tvBankName.getText().toString().trim())){
+            tvBankName.setError(getString(R.string.invalid_bank_name));
+            flag = false;
+        }
 
-        return true;
+        if (TextUtils.isEmpty(tvAccountNumber.getText().toString().trim())){
+            tvAccountNumber.setError(getString(R.string.invalid_account_number));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvCreditCardNumber.getText().toString().trim())){
+            tvCreditCardNumber.setError(getString(R.string.invalid_cc_number));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvDebitCardNumber.getText().toString().trim())){
+            tvDebitCardNumber.setError(getString(R.string.invalid_debit_card_number));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvCreditCardPin.getText().toString().trim())){
+            tvCreditCardPin.setError(getString(R.string.invalid_cc_pin));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvDebitCardPin.getText().toString().trim())){
+            tvDebitCardPin.setError(getString(R.string.invalid_debit_card_pin));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvNetBankingId.getText().toString().trim())){
+            tvNetBankingId.setError(getString(R.string.invalid_net_banking_id));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvNetBankingPassword.getText().toString().trim())){
+            tvNetBankingPassword.setError(getString(R.string.invalid_net_banking_password));
+            flag = false;
+        }
+        return flag;
     }
 
     @Override

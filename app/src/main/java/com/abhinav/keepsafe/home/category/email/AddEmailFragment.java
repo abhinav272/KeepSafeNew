@@ -2,6 +2,7 @@ package com.abhinav.keepsafe.home.category.email;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.entities.Email;
+import com.abhinav.keepsafe.utils.KeepSafeRegexUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,7 +68,29 @@ public class AddEmailFragment extends BaseFragment implements AddEmailView {
     }
 
     private boolean fireValidations() {
-        return true;
+        boolean flag = true;
+        if (TextUtils.isEmpty(tvEmailId.getText().toString().trim()) ||
+                !KeepSafeRegexUtil.isValidEmail(tvEmailId.getText().toString().trim())) {
+            tvEmailId.setError(getString(R.string.invalid_email));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvEmailPassword.getText().toString().trim())) {
+            tvEmailPassword.setError(getString(R.string.invalid_email_password));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvRecoveryEmail.getText().toString().trim()) ||
+                !KeepSafeRegexUtil.isValidEmail(tvRecoveryEmail.getText().toString().trim())) {
+            tvRecoveryEmail.setError(getString(R.string.invalid_recovery_email));
+            flag = false;
+        }
+
+        if (TextUtils.isEmpty(tvPlatformName.getText().toString().trim())) {
+            tvPlatformName.setError(getString(R.string.invalid_platform));
+            flag = false;
+        }
+        return flag;
     }
 
     @Override
