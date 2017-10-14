@@ -3,7 +3,9 @@ package com.abhinav.keepsafe.data;
 import android.arch.lifecycle.LiveData;
 
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
+import com.abhinav.keepsafe.entities.SocialNetwork;
 
 import java.util.List;
 
@@ -34,5 +36,26 @@ public interface IDataManager {
     Observable<Long> addEmail(Email email);
     void updateEmail(Email email);
     void deleteEmail(Email email);
+
+    /**
+     * SocialNetworkDAO methods
+     * */
+    LiveData<List<SocialNetwork>> fetchAllSocialNetworkAccounts();
+    LiveData<SocialNetwork> fetchSocialNetworkDetails(int socialNetworkId);
+    Observable<Long> addSocialNetwork(SocialNetwork socialNetwork);
+    void updateSocialNetwork(SocialNetwork socialNetwork);
+    void deleteSocialNetwork(SocialNetwork socialNetwork);
+
+    /**
+     * ECommerceDAO methods
+     * */
+    LiveData<List<ECommerce>> fetchAllECommerceAccounts();
+    LiveData<ECommerce> fetchECommerceDetails(int eCommerceId);
+    Observable<Long> addECommerce(ECommerce eCommerce);
+    void updateECommerce(ECommerce eCommerce);
+    void deleteECommerce(ECommerce eCommerce);
+
+
+
 
 }

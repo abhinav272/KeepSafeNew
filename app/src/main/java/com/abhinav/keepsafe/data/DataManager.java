@@ -3,7 +3,9 @@ package com.abhinav.keepsafe.data;
 import android.arch.lifecycle.LiveData;
 
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
+import com.abhinav.keepsafe.entities.SocialNetwork;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -105,5 +107,59 @@ public class DataManager implements IDataManager {
     @Override
     public void deleteEmail(Email email) {
         mDataBaseHelper.getEmailDao().deleteEmail(email);
+    }
+
+    @Override
+    public LiveData<List<SocialNetwork>> fetchAllSocialNetworkAccounts() {
+        return mDataBaseHelper.getSocialNetworkDao().getAllSocialNetworkAccounts();
+    }
+
+    @Override
+    public LiveData<SocialNetwork> fetchSocialNetworkDetails(int socialNetworkId) {
+        return mDataBaseHelper.getSocialNetworkDao().getSocialNetworkDetails(socialNetworkId);
+    }
+
+    @Override
+    public Observable<Long> addSocialNetwork(SocialNetwork socialNetwork) {
+        return Observable.fromCallable(() -> mDataBaseHelper.getSocialNetworkDao().addSocialNetwork(socialNetwork))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public void updateSocialNetwork(SocialNetwork socialNetwork) {
+        mDataBaseHelper.getSocialNetworkDao().updateSocialNetwork(socialNetwork);
+    }
+
+    @Override
+    public void deleteSocialNetwork(SocialNetwork socialNetwork) {
+        mDataBaseHelper.getSocialNetworkDao().deleteSocialNetwork(socialNetwork);
+    }
+
+    @Override
+    public LiveData<List<ECommerce>> fetchAllECommerceAccounts() {
+        return mDataBaseHelper.getECommerceDao().getAllECommerceAccounts();
+    }
+
+    @Override
+    public LiveData<ECommerce> fetchECommerceDetails(int eCommerceId) {
+        return mDataBaseHelper.getECommerceDao().getECommerceDetails(eCommerceId);
+    }
+
+    @Override
+    public Observable<Long> addECommerce(ECommerce eCommerce) {
+        return Observable.fromCallable(() -> mDataBaseHelper.getECommerceDao().addECommerce(eCommerce))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
+    public void updateECommerce(ECommerce eCommerce) {
+        mDataBaseHelper.getECommerceDao().updateECommerce(eCommerce);
+    }
+
+    @Override
+    public void deleteECommerce(ECommerce eCommerce) {
+        mDataBaseHelper.getECommerceDao().deleteECommerce(eCommerce);
     }
 }
