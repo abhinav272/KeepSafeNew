@@ -19,6 +19,8 @@ import com.abhinav.keepsafe.adapter.CTAAdapter;
 import com.abhinav.keepsafe.home.category.CategoryFragment;
 import com.abhinav.keepsafe.home.category.bank.AddBankFragment;
 import com.abhinav.keepsafe.home.category.email.AddEmailFragment;
+import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkFragment;
+import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkPresenter;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
@@ -151,6 +153,12 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     public void showAddEmailFragment() {
         ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), new AddEmailFragment(),
                 R.id.frame_container, AddEmailFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void showAddSocialNetworkFragment() {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), new AddSocialNetworkFragment(),
+                R.id.frame_container, AddSocialNetworkFragment.class.getSimpleName());
     }
 
     @Override

@@ -1,8 +1,6 @@
 package com.abhinav.keepsafe.home;
 
 import com.abhinav.keepsafe.base.BasePresenter;
-import com.abhinav.keepsafe.data.DataManager;
-import com.abhinav.keepsafe.pojo.Category;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,7 +49,7 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModelL
     }
 
     public void onAddSocialNetworkClicked() {
-
+        getView().showAddSocialNetworkFragment();
     }
 
     public void onAddECommerceClicked() {
