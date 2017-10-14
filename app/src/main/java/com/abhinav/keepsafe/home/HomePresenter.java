@@ -53,7 +53,7 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModelL
     }
 
     public void onAddECommerceClicked() {
-
+        getView().showECommerceFragment();
     }
 
     public void onAddOthersClicked() {

@@ -15,4 +15,5 @@ public interface HomeView extends IBaseView{
     void showAddBankFragment();
     void showAddEmailFragment();
     void showAddSocialNetworkFragment();
+    void showECommerceFragment();
 }

@@ -18,6 +18,7 @@ import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.CTAAdapter;
 import com.abhinav.keepsafe.home.category.CategoryFragment;
 import com.abhinav.keepsafe.home.category.bank.AddBankFragment;
+import com.abhinav.keepsafe.home.category.ecommerce.AddECommerceFragment;
 import com.abhinav.keepsafe.home.category.email.AddEmailFragment;
 import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkFragment;
 import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkPresenter;
@@ -159,6 +160,12 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     public void showAddSocialNetworkFragment() {
         ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), new AddSocialNetworkFragment(),
                 R.id.frame_container, AddSocialNetworkFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void showECommerceFragment() {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), new AddECommerceFragment(),
+                R.id.frame_container, AddECommerceFragment.class.getSimpleName());
     }
 
     @Override
