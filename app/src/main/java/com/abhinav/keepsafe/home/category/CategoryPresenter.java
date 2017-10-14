@@ -58,6 +58,9 @@ public class CategoryPresenter extends BasePresenter<CategoryView> implements Ca
                 getView().showECommerceListings(eCommerces);
         };
 
+        /**
+         * created livedata objects separately to fix crash
+         * */
         socialNetworkListLiveData = categoryModel.dataManager.fetchAllSocialNetworkAccounts();
         bankListLiveData = categoryModel.dataManager.fetchAllBanks();
         eCommerceListLiveData = categoryModel.dataManager.fetchAllECommerceAccounts();
