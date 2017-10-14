@@ -49,6 +49,8 @@
     <string name="hint_email_id_used">Email Id Used for SignIn</string>
     <string name="hint_user_name">Username (if Any)</string>
     <string name="invalid_social_platform">Invalid Social Platform Name</string>
+    <string name="hint_ecommerce_name">E-Commerce Platform Name</string>
+    <string name="hint_ecommerce_password">E-Commerce Password</string>
 
     <!-- Account Types-->
     <string-array name="account_types">
