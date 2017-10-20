@@ -34,7 +34,6 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
 
     private Context context;
     private RecyclerView recyclerView;
-    private ImageView ivNoView;
     private Toolbar toolbar;
     private FloatingActionButton fab;
     private FABRevealMenu fabRevealMenu;
@@ -67,7 +66,6 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     private void setupUI(View view) {
         toolbar = view.findViewById(R.id.toolbar);
         recyclerView = view.findViewById(R.id.rv_ctas);
-        ivNoView = view.findViewById(R.id.iv_no_view);
         fab = view.findViewById(R.id.fab);
         fabRevealMenu = view.findViewById(R.id.fabMenu);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
