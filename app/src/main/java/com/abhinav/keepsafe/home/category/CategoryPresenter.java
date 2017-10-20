@@ -108,4 +108,36 @@ public class CategoryPresenter extends BasePresenter<CategoryView> implements Ca
                 break;
         }
     }
+
+    public void fetchCategoryItemByPosition(int itemPosition, int selectedCategoryPosition) {
+        switch (selectedCategoryPosition) {
+            case -1:
+                break;
+            case 0:
+                if (bankListLiveData != null && bankListLiveData.getValue() != null)
+                    getView().showBankItem(bankListLiveData.getValue().get(itemPosition));
+                break;
+            case 1:
+                if (emailListLiveData != null && emailListLiveData.getValue() != null) {
+                    getView().showEmailItem(emailListLiveData.getValue().get(itemPosition));
+                }
+                break;
+            case 2:
+                if (socialNetworkListLiveData != null && socialNetworkListLiveData.getValue() != null) {
+                    getView().showSocialNetworkItem(socialNetworkListLiveData.getValue().get(itemPosition));
+                }
+                break;
+            case 3:
+                if (eCommerceListLiveData != null && eCommerceListLiveData.getValue() != null) {
+                    getView().showECommerceItem(eCommerceListLiveData.getValue().get(itemPosition));
+                }
+                break;
+            case 4:
+                break;
+        }
+    }
+
+    void onEditBankClicked(int bankId) {
+        getView().addEditBankFragment(bankId);
+    }
 }
