@@ -20,22 +20,27 @@ public class BankAdapter extends RecyclerView.Adapter<BankViewHolder> {
 
     private LayoutInflater inflater;
     private List<Bank> bankList;
+    private AdapterItemClickListener listener;
 
-    public BankAdapter(Context context, List<Bank> bankList) {
+    public BankAdapter(Context context, List<Bank> bankList, AdapterItemClickListener listener) {
         this.bankList = bankList;
+        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 
     @Override
     public BankViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.layout_single_text_view, parent, false);
-        BankViewHolder bankViewHolder = new BankViewHolder(view);
-        return bankViewHolder;
+        return new BankViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(BankViewHolder holder, int position) {
         holder.tvName.setText(getItem(position).getBankName());
+        holder.tvName.setOnClickListener(v -> {
+            if (listener != null)
+                listener.onItemClick(position);
+        });
     }
 
     @Override
