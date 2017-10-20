@@ -82,7 +82,7 @@ public class AddBankFragment extends BaseFragment implements AddBankView {
     public void onSaveClicked() {
         if (fireValidations()) {
             Bank bank = new Bank();
-            bank.setBankName(tvBankName.getText().toString().trim());
+            bank.setBankName(tvBankName.getText().toString().trim().toUpperCase());
             bank.setAccountType(tvAccountType.getSelectedItem().toString().trim());
             bank.setAccountNumber(tvAccountNumber.getText().toString().trim());
             bank.setCreditCardNumber(tvCreditCardNumber.getText().toString().trim());
