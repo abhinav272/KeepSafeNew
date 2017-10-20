@@ -2,6 +2,7 @@ package com.abhinav.keepsafe.home.category.bank;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,8 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
     EditText etNetBankingId;
     @BindView(R.id.et_net_banking_password)
     EditText etNetBankingPassword;
-    @BindView(R.id.tv_save)
-    TextView tvSave;
+    @BindView(R.id.fab_save)
+    FloatingActionButton fabSave;
     Unbinder unbinder;
     private int bankId;
     private EditBankPresenter presenter;
@@ -89,7 +90,7 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
         presenter.detachView();
     }
 
-    @OnClick(R.id.tv_save)
+    @OnClick(R.id.fab_save)
     public void onViewClicked() {
 
     }
