@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_bank_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_account_number_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_account_number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bank_name" />
+
+        <EditText
+            android:id="@+id/et_account_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account_number_placeholder"
+            tools:text="910010002142185" />
+
+        <TextView
+            android:id="@+id/tv_debit_card_number_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_debit_card_number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_account_number" />
+
+        <EditText
+            android:id="@+id/et_debit_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_number_placeholder"
+            tools:text="4111 0520 0950 9090" />
+
+        <TextView
+            android:id="@+id/tv_credit_card_number_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_credit_card_number"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_debit_card_number" />
+
+        <EditText
+            android:id="@+id/et_credit_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_number_placeholder"
+            tools:text="4111 1441 8933 0420" />
+
+        <TextView
+            android:id="@+id/tv_debit_card_pin_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_debit_card_pin"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_credit_card_number" />
+
+        <EditText
+            android:id="@+id/et_debit_card_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_pin_placeholder"
+            tools:text="189022" />
+
+        <TextView
+            android:id="@+id/tv_credit_card_pin_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_credit_card_pin"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_debit_card_pin" />
+
+        <EditText
+            android:id="@+id/et_credit_card_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_pin_placeholder"
+            tools:text="785512" />
+
+        <TextView
+            android:id="@+id/tv_net_banking_id_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_net_banking_id"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_credit_card_pin" />
+
+        <EditText
+            android:id="@+id/et_net_banking_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_id_placeholder"
+            tools:text="833645450" />
+
+        <TextView
+            android:id="@+id/tv_net_banking_password_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hint_net_banking_password"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_net_banking_id" />
+
+        <EditText
+            android:id="@+id/et_net_banking_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:enabled="false"
+            android:singleLine="true"
+            android:textColor="@drawable/selector_edit_text_color"
+            android:textCursorDrawable="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_password_placeholder"
+            tools:text="abhinav0212" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

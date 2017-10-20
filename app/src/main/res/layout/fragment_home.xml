@@ -19,14 +19,6 @@
         android:paddingStart="16dp"
         android:paddingTop="10dp" />
 
-    <ImageView
-        android:id="@+id/iv_no_view"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/svg_no_categories"
-        android:visibility="gone" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:src="@drawable/ic_add"
