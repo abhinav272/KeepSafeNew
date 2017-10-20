@@ -14,11 +14,15 @@ import java.util.List;
 
 public interface CategoryView extends IBaseView {
     void showToolbarTitle(int position);
-    void onCategoryListingClicked(int listingPosition);
     void popFragmentOnInvalidChoice();
     void showBankListing(List<Bank> value);
     void showNoItemView();
     void showEmailListings(List<Email> emails);
     void showSocialNetworkListings(List<SocialNetwork> socialNetworks);
     void showECommerceListings(List<ECommerce> eCommerces);
+    void showBankItem(Bank bank);
+    void showEmailItem(Email email);
+    void showSocialNetworkItem(SocialNetwork socialNetwork);
+    void showECommerceItem(ECommerce eCommerce);
+    void addEditBankFragment(int bankId);
 }
