@@ -184,11 +184,11 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.layout_view_edit_bank, null);
         alertDialog.setView(view);
-        setupBankDetails(view, bank);
+        setupBankDetails(view, bank, alertDialog);
         alertDialog.show();
     }
 
-    private void setupBankDetails(View view, Bank bank) {
+    private void setupBankDetails(View view, Bank bank, AlertDialog dialog) {
         TextView tvBankName = view.findViewById(R.id.tv_bank_name);
         EditText tvAccountNumber = view.findViewById(R.id.et_account_number);
         EditText tvDebitCardNumber = view.findViewById(R.id.et_debit_card_number);
@@ -197,7 +197,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         EditText tvCreditCardPin = view.findViewById(R.id.et_credit_card_pin);
         EditText tvNetBankingUserId = view.findViewById(R.id.et_net_banking_id);
         EditText tvNetBankingPassword = view.findViewById(R.id.et_net_banking_password);
-        ImageView ivEdit = view.findViewById(R.id.iv_edit_save);
+        ImageView ivEdit = view.findViewById(R.id.iv_edit);
 
         tvBankName.setText(bank.getBankName());
         tvAccountNumber.setText(bank.getAccountNumber());
@@ -209,6 +209,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         tvNetBankingPassword.setText(bank.getNetBankingPassword());
 
         ivEdit.setOnClickListener(v -> {
+            dialog.dismiss();
             mPresenter.onEditBankClicked(bank.getId());
         });
 
@@ -217,7 +218,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
     @Override
     public void addEditBankFragment(int bankId) {
         ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
-                new EditBankFragment(), R.id.frame_container,
+                EditBankFragment.getInstance(bankId), R.id.frame_container,
                 EditBankFragment.class.getSimpleName());
     }
 
