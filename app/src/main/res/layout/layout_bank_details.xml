@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
+        android:paddingBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,7 +45,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_account_number_placeholder"
@@ -72,7 +73,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_number_placeholder"
@@ -100,7 +101,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_number_placeholder"
@@ -129,7 +130,7 @@
             android:maxLength="6"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_pin_placeholder"
@@ -158,7 +159,7 @@
             android:maxLength="6"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_pin_placeholder"
@@ -185,7 +186,7 @@
             android:enabled="false"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_id_placeholder"
@@ -212,7 +213,7 @@
             android:enabled="false"
             android:singleLine="true"
             android:textColor="@drawable/selector_edit_text_color"
-            android:textCursorDrawable="@color/colorBlack"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_password_placeholder"
