@@ -1,19 +1,26 @@
 package com.abhinav.keepsafe.home.category;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
+import com.abhinav.keepsafe.BaseActivity;
 import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.Constants;
 import com.abhinav.keepsafe.R;
+import com.abhinav.keepsafe.adapter.AdapterItemClickListener;
 import com.abhinav.keepsafe.adapter.BankAdapter;
 import com.abhinav.keepsafe.adapter.ECommerceAdapter;
 import com.abhinav.keepsafe.adapter.EmailAdapter;
@@ -22,6 +29,7 @@ import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
 import com.abhinav.keepsafe.entities.SocialNetwork;
+import com.abhinav.keepsafe.home.category.bank.EditBankFragment;
 
 import java.util.List;
 
@@ -33,7 +41,7 @@ import butterknife.Unbinder;
  * Created by abhinav.sharma on 11/10/17.
  */
 
-public class CategoryFragment extends BaseFragment implements CategoryView {
+public class CategoryFragment extends BaseFragment implements CategoryView, AdapterItemClickListener {
 
     @BindView(R.id.rv_category_items)
     RecyclerView rvCategoryItems;
@@ -142,12 +150,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView {
     }
 
     private BankAdapter getBankAdapter(List<Bank> value) {
-        return new BankAdapter(context, value);
-    }
-
-    @Override
-    public void onCategoryListingClicked(int listingPosition) {
-
+        return new BankAdapter(context, value, this);
     }
 
     @Override
@@ -167,5 +170,69 @@ public class CategoryFragment extends BaseFragment implements CategoryView {
         super.onDestroyView();
         unbinder.unbind();
         mPresenter.detachView();
+    }
+
+    @Override
+    public void onItemClick(int itemPosition) {
+        mPresenter.fetchCategoryItemByPosition(itemPosition, position);
+    }
+
+    @Override
+    public void showBankItem(Bank bank) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+        AlertDialog alertDialog = dialogBuilder.create();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.layout_view_edit_bank, null);
+        alertDialog.setView(view);
+        setupBankDetails(view, bank);
+        alertDialog.show();
+    }
+
+    private void setupBankDetails(View view, Bank bank) {
+        TextView tvBankName = view.findViewById(R.id.tv_bank_name);
+        EditText tvAccountNumber = view.findViewById(R.id.et_account_number);
+        EditText tvDebitCardNumber = view.findViewById(R.id.et_debit_card_number);
+        EditText tvCreditCardNumber = view.findViewById(R.id.et_credit_card_number);
+        EditText tvDebitCardPin = view.findViewById(R.id.et_debit_card_pin);
+        EditText tvCreditCardPin = view.findViewById(R.id.et_credit_card_pin);
+        EditText tvNetBankingUserId = view.findViewById(R.id.et_net_banking_id);
+        EditText tvNetBankingPassword = view.findViewById(R.id.et_net_banking_password);
+        ImageView ivEdit = view.findViewById(R.id.iv_edit_save);
+
+        tvBankName.setText(bank.getBankName());
+        tvAccountNumber.setText(bank.getAccountNumber());
+        tvDebitCardNumber.setText(bank.getDebitCardNumber());
+        tvCreditCardNumber.setText(bank.getCreditCardNumber());
+        tvDebitCardPin.setText(bank.getDebitCardPin());
+        tvCreditCardPin.setText(bank.getCreditCardPin());
+        tvNetBankingUserId.setText(bank.getCustomerId());
+        tvNetBankingPassword.setText(bank.getNetBankingPassword());
+
+        ivEdit.setOnClickListener(v -> {
+            mPresenter.onEditBankClicked(bank.getId());
+        });
+
+    }
+
+    @Override
+    public void addEditBankFragment(int bankId) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
+                new EditBankFragment(), R.id.frame_container,
+                EditBankFragment.class.getSimpleName());
+    }
+
+    @Override
+    public void showEmailItem(Email email) {
+
+    }
+
+    @Override
+    public void showSocialNetworkItem(SocialNetwork socialNetwork) {
+
+    }
+
+    @Override
+    public void showECommerceItem(ECommerce eCommerce) {
+
     }
 }
