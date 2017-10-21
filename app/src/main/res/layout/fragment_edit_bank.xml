@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorWhite"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
     <RelativeLayout
-        android:clipToPadding="false"
-        android:paddingBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp">
 
         <include
             android:id="@+id/layout_bank_details"
             layout="@layout/layout_bank_details" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_save"
-            android:src="@drawable/ic_tick"
-            android:tint="@color/colorAccent"
+            android:id="@+id/fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fab_save"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="28dp"
             android:backgroundTint="@color/colorPrimary"
-            android:layout_below="@id/layout_bank_details"
+            android:tint="@color/colorAccent"
+            android:src="@drawable/ic_delete"
+            app:fabSize="mini" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
+            android:layout_below="@id/layout_bank_details"
             android:layout_marginBottom="20dp"
-            app:fabSize="normal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_tick"
+            android:tint="@color/colorAccent"
+            app:fabSize="normal" />
 
     </RelativeLayout>
 
