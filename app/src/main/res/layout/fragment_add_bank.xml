@@ -82,6 +82,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textSize="12sp"
+            android:maxLength="16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_account_number" />
@@ -98,6 +99,7 @@
             android:inputType="number"
             android:singleLine="true"
             android:textSize="12sp"
+            android:maxLength="16"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_number" />
