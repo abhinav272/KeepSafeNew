@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@color/colorWhite">
 
     <RelativeLayout
@@ -22,6 +23,7 @@
             android:layout_above="@+id/fab_save"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="28dp"
+            android:layout_marginBottom="18dp"
             android:backgroundTint="@color/colorPrimary"
             android:tint="@color/colorAccent"
             android:src="@drawable/ic_delete"
@@ -33,7 +35,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_below="@id/layout_bank_details"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/colorPrimary"
