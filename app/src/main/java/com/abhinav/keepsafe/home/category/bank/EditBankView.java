@@ -9,4 +9,5 @@ import com.abhinav.keepsafe.entities.Bank;
 
 interface EditBankView extends IBaseView {
     void showBankDetails(Bank bank);
+    void popFragment();
 }

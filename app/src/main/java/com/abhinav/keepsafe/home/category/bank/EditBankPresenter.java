@@ -50,4 +50,9 @@ public class EditBankPresenter extends BasePresenter<EditBankView> implements Ba
         bankLiveData = model.dataManager.fetchBankDetails(bankId);
         bankLiveData.observeForever(bankObserver);
     }
+
+    public void onSaveClicked(Bank bankObj) {
+        model.dataManager.updateBank(bankObj);
+        getView().popFragment();
+    }
 }

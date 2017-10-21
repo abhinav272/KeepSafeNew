@@ -13,6 +13,7 @@ import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.Constants;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.entities.Bank;
+import com.abhinav.keepsafe.utils.Formatter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,6 +48,7 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
     Unbinder unbinder;
     private int bankId;
     private EditBankPresenter presenter;
+    private Bank bank;
 
     public static EditBankFragment getInstance(int bankId) {
         Bundle bundle = new Bundle();
@@ -90,17 +92,35 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
         presenter.detachView();
     }
 
+    @Override
+    public void popFragment() {
+        getFragmentManager().popBackStackImmediate();
+    }
+
     @OnClick(R.id.fab_save)
     public void onViewClicked() {
+        presenter.onSaveClicked(getBankObj());
+    }
 
+    private Bank getBankObj() {
+        bank.setBankName(tvBankName.getText().toString().trim().toUpperCase());
+        bank.setAccountNumber(etAccountNumber.getText().toString().trim());
+        bank.setCreditCardNumber(Formatter.removeStyledBankCardNumber(etCreditCardNumber.getText().toString().trim()).toString());
+        bank.setDebitCardNumber(Formatter.removeStyledBankCardNumber(etDebitCardNumber.getText().toString().trim()).toString());
+        bank.setCreditCardPin(etCreditCardPin.getText().toString().trim());
+        bank.setDebitCardPin(etDebitCardPin.getText().toString().trim());
+        bank.setCustomerId(etNetBankingId.getText().toString().trim());
+        bank.setNetBankingPassword(etNetBankingPassword.getText().toString().trim());
+        return bank;
     }
 
     @Override
     public void showBankDetails(Bank bank) {
+        this.bank = bank;
         tvBankName.setText(bank.getBankName());
         etAccountNumber.setText(bank.getAccountNumber());
-        etCreditCardNumber.setText(bank.getCreditCardNumber());
-        etDebitCardNumber.setText(bank.getDebitCardNumber());
+        etCreditCardNumber.setText(Formatter.getFormattedBankCardNumber(bank.getCreditCardNumber()));
+        etDebitCardNumber.setText(Formatter.getFormattedBankCardNumber(bank.getDebitCardNumber()));
         etCreditCardPin.setText(bank.getCreditCardPin());
         etDebitCardPin.setText(bank.getDebitCardPin());
         etNetBankingId.setText(bank.getCustomerId());
