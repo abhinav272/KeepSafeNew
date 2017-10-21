@@ -1,6 +1,7 @@
 package com.abhinav.keepsafe.data;
 
 import android.arch.lifecycle.LiveData;
+import android.util.Log;
 
 import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.ECommerce;
@@ -26,7 +27,7 @@ public class DataManager implements IDataManager {
     private static volatile DataManager mDataManager;
 
     private DataManager() {
-        if (mDataManager!=null)
+        if (mDataManager != null)
             throw new IllegalStateException("Illegal state of DataManager");
         else {
             // initialize all data sources;
@@ -36,9 +37,9 @@ public class DataManager implements IDataManager {
     }
 
     public static DataManager getInstance() {
-        if (mDataManager == null){
-            synchronized (DataManager.class){
-                if (mDataManager == null){
+        if (mDataManager == null) {
+            synchronized (DataManager.class) {
+                if (mDataManager == null) {
                     mDataManager = new DataManager();
                 }
             }
@@ -76,14 +77,17 @@ public class DataManager implements IDataManager {
 
     @Override
     public void updateBank(Bank bank) {
-        Maybe.fromCompletable(cs -> mDataBaseHelper.getBankDao().updateBank(bank))
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread()).subscribe();
+        Completable.fromAction(() -> mDataBaseHelper.getBankDao().updateBank(bank))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe();
     }
 
     @Override
     public void deleteBank(Bank bank) {
-        mDataBaseHelper.getBankDao().deleteBank(bank);
+        Completable.fromAction(() -> mDataBaseHelper.getBankDao().deleteBank(bank))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
