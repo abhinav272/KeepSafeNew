@@ -10,6 +10,8 @@ import com.abhinav.keepsafe.entities.SocialNetwork;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import io.reactivex.Completable;
+import io.reactivex.Maybe;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -74,7 +76,9 @@ public class DataManager implements IDataManager {
 
     @Override
     public void updateBank(Bank bank) {
-        mDataBaseHelper.getBankDao().updateBank(bank);
+        Maybe.fromCompletable(cs -> mDataBaseHelper.getBankDao().updateBank(bank))
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread()).subscribe();
     }
 
     @Override
