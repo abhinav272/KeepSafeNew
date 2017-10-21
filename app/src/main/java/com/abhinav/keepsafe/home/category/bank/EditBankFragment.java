@@ -45,6 +45,8 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
     EditText etNetBankingPassword;
     @BindView(R.id.fab_save)
     FloatingActionButton fabSave;
+    @BindView(R.id.fab_delete)
+    FloatingActionButton fabDelete;
     Unbinder unbinder;
     private int bankId;
     private EditBankPresenter presenter;
@@ -100,6 +102,11 @@ public class EditBankFragment extends BaseFragment implements EditBankView {
     @OnClick(R.id.fab_save)
     public void onViewClicked() {
         presenter.onSaveClicked(getBankObj());
+    }
+
+    @OnClick(R.id.fab_delete)
+    public void onDeleteClicked() {
+        presenter.onDeleteClicked(bank);
     }
 
     private Bank getBankObj() {

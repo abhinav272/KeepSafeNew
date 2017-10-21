@@ -55,4 +55,9 @@ public class EditBankPresenter extends BasePresenter<EditBankView> implements Ba
         model.dataManager.updateBank(bankObj);
         getView().popFragment();
     }
+
+    public void onDeleteClicked(Bank bank) {
+        model.dataManager.deleteBank(bank);
+        getView().popFragment();
+    }
 }
