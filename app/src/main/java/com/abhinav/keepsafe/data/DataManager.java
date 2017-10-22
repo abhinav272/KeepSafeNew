@@ -109,12 +109,16 @@ public class DataManager implements IDataManager {
 
     @Override
     public void updateEmail(Email email) {
-        mDataBaseHelper.getEmailDao().updateEmail(email);
+        Completable.fromAction(() -> mDataBaseHelper.getEmailDao().updateEmail(email))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
     public void deleteEmail(Email email) {
-        mDataBaseHelper.getEmailDao().deleteEmail(email);
+        Completable.fromAction(() -> mDataBaseHelper.getEmailDao().deleteEmail(email))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
@@ -136,12 +140,16 @@ public class DataManager implements IDataManager {
 
     @Override
     public void updateSocialNetwork(SocialNetwork socialNetwork) {
-        mDataBaseHelper.getSocialNetworkDao().updateSocialNetwork(socialNetwork);
+        Completable.fromAction(() -> mDataBaseHelper.getSocialNetworkDao().updateSocialNetwork(socialNetwork))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
     public void deleteSocialNetwork(SocialNetwork socialNetwork) {
-        mDataBaseHelper.getSocialNetworkDao().deleteSocialNetwork(socialNetwork);
+        Completable.fromAction(() -> mDataBaseHelper.getSocialNetworkDao().deleteSocialNetwork(socialNetwork))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
@@ -163,11 +171,15 @@ public class DataManager implements IDataManager {
 
     @Override
     public void updateECommerce(ECommerce eCommerce) {
-        mDataBaseHelper.getECommerceDao().updateECommerce(eCommerce);
+        Completable.fromAction(() -> mDataBaseHelper.getECommerceDao().updateECommerce(eCommerce))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 
     @Override
     public void deleteECommerce(ECommerce eCommerce) {
-        mDataBaseHelper.getECommerceDao().deleteECommerce(eCommerce);
+        Completable.fromAction(() -> mDataBaseHelper.getECommerceDao().deleteECommerce(eCommerce))
+                .subscribeOn(Schedulers.io())
+                .subscribe();
     }
 }
