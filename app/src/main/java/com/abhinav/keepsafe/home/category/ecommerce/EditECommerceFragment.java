@@ -40,6 +40,7 @@ public class EditECommerceFragment extends BaseFragment implements EditECommerce
     Unbinder unbinder;
     private ECommerce eCommerce;
     private int eCommerceId;
+    private EditECommercePresenter presenter;
 
 
     public static EditECommerceFragment getInstance(int eCommerceId) {
@@ -56,7 +57,21 @@ public class EditECommerceFragment extends BaseFragment implements EditECommerce
         View view = inflater.inflate(R.layout.fragment_edit_ecommerce, container, false);
         unbinder = ButterKnife.bind(this, view);
         eCommerceId = getArguments().getInt(Constants.ExtrasKey.ECOMMERCE_ID, -1);
+        presenter = new EditECommercePresenter(this);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        presenter.fetchECommerceDetails(eCommerceId);
+        setupEditMode();
+    }
+
+    private void setupEditMode() {
+        etPassword.setEnabled(true);
+        etEmailIdUsed.setEnabled(true);
+        etEcommerceUsername.setEnabled(true);
     }
 
     @Override
@@ -67,7 +82,10 @@ public class EditECommerceFragment extends BaseFragment implements EditECommerce
     @Override
     public void showECommerceDetails(ECommerce eCommerce) {
         this.eCommerce = eCommerce;
-
+        tvPlatformName.setText(eCommerce.getPlatformName());
+        etEcommerceUsername.setText(eCommerce.getUsername());
+        etEmailIdUsed.setText(eCommerce.getEmailIdUsed());
+        etPassword.setText(eCommerce.getPassword());
     }
 
     @Override
@@ -80,9 +98,18 @@ public class EditECommerceFragment extends BaseFragment implements EditECommerce
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.fab_delete:
+                presenter.deleteECommerceAccount(eCommerce);
                 break;
             case R.id.fab_save:
+                presenter.updateECommerceAccount(getECommerceObj());
                 break;
         }
+    }
+
+    private ECommerce getECommerceObj() {
+        eCommerce.setUsername(etEcommerceUsername.getText().toString().trim());
+        eCommerce.setPassword(etPassword.getText().toString().trim());
+        eCommerce.setEmailIdUsed(etEmailIdUsed.getText().toString().trim());
+        return eCommerce;
     }
 }
