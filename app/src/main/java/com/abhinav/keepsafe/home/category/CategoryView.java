@@ -25,4 +25,7 @@ public interface CategoryView extends IBaseView {
     void showSocialNetworkItem(SocialNetwork socialNetwork);
     void showECommerceItem(ECommerce eCommerce);
     void addEditBankFragment(int bankId);
+    void addEditEmailFragment(int emailId);
+    void addEditSocialNetworkFragment(int socialNetworkId);
+    void addEditECommerceFragment(int eCommerceId);
 }

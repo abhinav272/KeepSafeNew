@@ -140,4 +140,16 @@ public class CategoryPresenter extends BasePresenter<CategoryView> implements Ca
     void onEditBankClicked(int bankId) {
         getView().addEditBankFragment(bankId);
     }
+
+    public void onEditEmailClicked(int emailId) {
+        getView().addEditEmailFragment(emailId);
+    }
+
+    public void onEditSocialNetworkClicked(int socialNetworkId) {
+        getView().addEditSocialNetworkFragment(socialNetworkId);
+    }
+
+    public void onEditECommerceClicked(int eCommerceId) {
+        getView().addEditECommerceFragment(eCommerceId);
+    }
 }

@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +31,9 @@ import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
 import com.abhinav.keepsafe.entities.SocialNetwork;
 import com.abhinav.keepsafe.home.category.bank.EditBankFragment;
+import com.abhinav.keepsafe.home.category.ecommerce.EditECommerceFragment;
+import com.abhinav.keepsafe.home.category.email.EditEmailFragment;
+import com.abhinav.keepsafe.home.category.socialnetwork.EditSocialNetworkFragment;
 
 import java.util.List;
 
@@ -138,15 +142,15 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
     }
 
     private ECommerceAdapter getECommerceAdapter(List<ECommerce> eCommerces) {
-        return new ECommerceAdapter(context, eCommerces);
+        return new ECommerceAdapter(context, eCommerces, this);
     }
 
     private SocialNetworkAdapter getSocialNetworkAdapter(List<SocialNetwork> socialNetworks) {
-        return new SocialNetworkAdapter(context, socialNetworks);
+        return new SocialNetworkAdapter(context, socialNetworks, this);
     }
 
     private EmailAdapter getEmailAdapter(List<Email> emails) {
-        return new EmailAdapter(context, emails);
+        return new EmailAdapter(context, emails, this);
     }
 
     private BankAdapter getBankAdapter(List<Bank> value) {
@@ -224,16 +228,109 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
 
     @Override
     public void showEmailItem(Email email) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+        AlertDialog alertDialog = dialogBuilder.create();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.layout_view_edit_email, null);
+        alertDialog.setView(view);
+        setupEmailDetails(view, email, alertDialog);
+        alertDialog.show();
+    }
 
+    private void setupEmailDetails(View view, Email email, AlertDialog alertDialog) {
+        TextView tvEmailId = view.findViewById(R.id.tv_email_id);
+        EditText etPlatformName = view.findViewById(R.id.et_platform_name);
+        EditText etRecoveryMail = view.findViewById(R.id.et_recovery_email);
+        EditText etPassword = view.findViewById(R.id.et_email_password);
+        ImageView ivEdit = view.findViewById(R.id.iv_edit);
+
+        tvEmailId.setText(email.getEmailId());
+        etPlatformName.setText(email.getPlatformName());
+        etRecoveryMail.setText(email.getRecoveryEmail());
+        etPassword.setText(email.getEmailPassword());
+
+        ivEdit.setOnClickListener(v -> {
+            alertDialog.dismiss();
+            mPresenter.onEditEmailClicked(email.getId());
+        });
+    }
+
+    @Override
+    public void addEditEmailFragment(int emailId) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
+                EditEmailFragment.getInstance(emailId), R.id.frame_container,
+                EditEmailFragment.class.getSimpleName());
     }
 
     @Override
     public void showSocialNetworkItem(SocialNetwork socialNetwork) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+        AlertDialog alertDialog = dialogBuilder.create();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.layout_view_edit_social_network, null);
+        alertDialog.setView(view);
+        setupSocialNetworkDetails(view, socialNetwork, alertDialog);
+        alertDialog.show();
+    }
 
+    private void setupSocialNetworkDetails(View view, SocialNetwork socialNetwork, AlertDialog alertDialog) {
+        TextView tvPlatformName = view.findViewById(R.id.tv_platform_name);
+        EditText etEmailUsed = view.findViewById(R.id.et_email_id_used);
+        EditText etUserName = view.findViewById(R.id.et_social_network_username);
+        EditText etPassword = view.findViewById(R.id.et_password);
+        ImageView ivEdit = view.findViewById(R.id.iv_edit);
+
+        tvPlatformName.setText(socialNetwork.getPlatformName());
+        etEmailUsed.setText(socialNetwork.getEmailIdUsed());
+        etUserName.setText(socialNetwork.getUsername());
+        etPassword.setText(socialNetwork.getPassword());
+
+        ivEdit.setOnClickListener(v -> {
+            alertDialog.dismiss();
+            mPresenter.onEditSocialNetworkClicked(socialNetwork.getId());
+        });
+    }
+
+    @Override
+    public void addEditSocialNetworkFragment(int socialNetworkId) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
+                EditSocialNetworkFragment.getInstance(socialNetworkId), R.id.frame_container,
+                EditSocialNetworkFragment.class.getSimpleName());
     }
 
     @Override
     public void showECommerceItem(ECommerce eCommerce) {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+        AlertDialog alertDialog = dialogBuilder.create();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.layout_view_edit_ecommerce, null);
+        alertDialog.setView(view);
+        setupECommerceDetails(view, eCommerce, alertDialog);
+        alertDialog.show();
+    }
 
+    private void setupECommerceDetails(View view, ECommerce eCommerce, AlertDialog alertDialog) {
+        TextView tvPlatformName = view.findViewById(R.id.tv_platform_name);
+        EditText etEmailUsed = view.findViewById(R.id.et_email_id_used);
+        EditText etUserName = view.findViewById(R.id.et_ecommerce_username);
+        EditText etPassword = view.findViewById(R.id.et_password);
+        ImageView ivEdit = view.findViewById(R.id.iv_edit);
+
+        tvPlatformName.setText(eCommerce.getPlatformName());
+        etEmailUsed.setText(eCommerce.getEmailIdUsed());
+        etUserName.setText(eCommerce.getUsername());
+        etPassword.setText(eCommerce.getPassword());
+
+        ivEdit.setOnClickListener(v -> {
+            alertDialog.dismiss();
+            mPresenter.onEditECommerceClicked(eCommerce.getId());
+        });
+    }
+
+    @Override
+    public void addEditECommerceFragment(int eCommerceId) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
+                EditECommerceFragment.getInstance(eCommerceId), R.id.frame_container,
+                EditECommerceFragment.class.getSimpleName());
     }
 }
