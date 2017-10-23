@@ -37,6 +37,11 @@ public class ECommerceAdapter extends RecyclerView.Adapter<ECommerceViewHolder> 
     @Override
     public void onBindViewHolder(ECommerceViewHolder holder, int position) {
         holder.tvName.setText(getItem(position).getPlatformName());
+        holder.tvName.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(position);
+            }
+        });
     }
 
     @Override
