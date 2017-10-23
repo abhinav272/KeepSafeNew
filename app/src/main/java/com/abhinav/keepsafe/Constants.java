@@ -9,6 +9,9 @@ public final class Constants {
         public static final String INTENT_EXTRA_BUNDLE = "intent_extra_bundle";
         public static final String SELECTED_CATEGORY_POSITION = "selected_category";
         public static final String BANK_ID = "bank_id";
+        public static final String EMAIL_ID = "email_id";
+        public static final String SOCIAL_NETWORK_ID = "social_network_id";
+        public static final java.lang.String ECOMMERCE_ID = "ecommerce_id";
     }
 
     public static final class NavigateTo{
