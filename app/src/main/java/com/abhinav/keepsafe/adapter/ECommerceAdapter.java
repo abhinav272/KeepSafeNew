@@ -20,9 +20,11 @@ public class ECommerceAdapter extends RecyclerView.Adapter<ECommerceViewHolder> 
 
     private List<ECommerce> eCommerces;
     private LayoutInflater inflater;
+    private AdapterItemClickListener listener;
 
-    public ECommerceAdapter(Context context, List<ECommerce> eCommerces) {
+    public ECommerceAdapter(Context context, List<ECommerce> eCommerces, AdapterItemClickListener listener) {
         this.eCommerces = eCommerces;
+        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 

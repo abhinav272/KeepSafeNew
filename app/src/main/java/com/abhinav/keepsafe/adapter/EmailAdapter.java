@@ -20,9 +20,11 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailViewHolder> {
 
     private LayoutInflater inflater;
     private List<Email> emails;
+    private AdapterItemClickListener listener;
 
-    public EmailAdapter(Context context, List<Email> emails) {
+    public EmailAdapter(Context context, List<Email> emails, AdapterItemClickListener listener) {
         this.emails = emails;
+        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 
@@ -35,6 +37,10 @@ public class EmailAdapter extends RecyclerView.Adapter<EmailViewHolder> {
     @Override
     public void onBindViewHolder(EmailViewHolder holder, int position) {
         holder.tvName.setText(getItem(position).getEmailId());
+        holder.tvName.setOnClickListener(v -> {
+            if (listener != null)
+                listener.onItemClick(position);
+        });
     }
 
     @Override

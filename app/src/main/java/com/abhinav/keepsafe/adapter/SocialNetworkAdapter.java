@@ -20,9 +20,11 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkView
 
     private List<SocialNetwork> socialNetworks;
     private LayoutInflater inflater;
+    private AdapterItemClickListener listener;
 
-    public SocialNetworkAdapter(Context context, List<SocialNetwork> socialNetworks) {
+    public SocialNetworkAdapter(Context context, List<SocialNetwork> socialNetworks, AdapterItemClickListener listener) {
         this.socialNetworks = socialNetworks;
+        this.listener = listener;
         inflater = LayoutInflater.from(context);
     }
 
@@ -35,6 +37,11 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkView
     @Override
     public void onBindViewHolder(SocialNetworkViewHolder holder, int position) {
         holder.tvName.setText(getItem(position).getPlatformName());
+        holder.tvName.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(position);
+            }
+        });
     }
 
     @Override
