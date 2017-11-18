@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -90,6 +91,12 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         rvCategoryItems.setLayoutManager(new LinearLayoutManager(context));
         mPresenter.initView();
         mPresenter.fetchCategoryListing(position);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
     }
 
     @Override
