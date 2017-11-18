@@ -91,12 +91,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         rvCategoryItems.setLayoutManager(new LinearLayoutManager(context));
         mPresenter.initView();
         mPresenter.fetchCategoryListing(position);
-        view.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return true;
-            }
-        });
+        view.setOnTouchListener((v, event) -> true);
     }
 
     @Override
