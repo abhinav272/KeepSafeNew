@@ -1,5 +1,7 @@
 # KeepSafe
 
+<img alt="NewsApp Main Page" height="200px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/app/src/main/res/mipmap-xxxhdpi/ic_keepsafe.png" />
+
 ### Sample app to demonstrate MVP (Model - View - Presenter), Android Architecture Components (Room Persistence, LiveData), RxJava2, ButterKnife in Android.
 
 ## Details
