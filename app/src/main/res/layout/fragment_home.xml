@@ -15,8 +15,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
         android:paddingBottom="10dp"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
         android:paddingTop="10dp" />
 
     <android.support.design.widget.FloatingActionButton
