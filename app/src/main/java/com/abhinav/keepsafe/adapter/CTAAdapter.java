@@ -42,7 +42,20 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
 
     @Override
     public void onBindViewHolder(CTAViewHolder holder, final int position) {
-        holder.ivCTAImage.setImageResource(R.drawable.svg_no_categories);
+        switch (position){
+            case 0:
+                holder.ivCTAImage.setImageResource(R.drawable.bank_logo);
+                break;
+            case 1:
+                holder.ivCTAImage.setImageResource(R.drawable.email_logo);
+                break;
+            case 2:
+                holder.ivCTAImage.setImageResource(R.drawable.socialmedial_logo);
+                break;
+            case 3:
+                holder.ivCTAImage.setImageResource(R.drawable.ecom_logo);
+                break;
+        }
         holder.tvCTATitle.setText(getItem(position));
         holder.ivCTAImage.setOnClickListener(v -> onItemClick.delegateClickEvent(position));
     }
