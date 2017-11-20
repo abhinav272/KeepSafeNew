@@ -55,6 +55,9 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
             case 3:
                 holder.ivCTAImage.setImageResource(R.drawable.ecom_logo);
                 break;
+            default:
+                holder.ivCTAImage.setImageResource(R.drawable.others_logo);
+                break;
         }
         holder.tvCTATitle.setText(getItem(position));
         holder.ivCTAImage.setOnClickListener(v -> onItemClick.delegateClickEvent(position));
