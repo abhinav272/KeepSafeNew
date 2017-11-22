@@ -53,6 +53,7 @@
     <string name="hint_ecommerce_name">E-Commerce Platform Name</string>
     <string name="hint_ecommerce_password">E-Commerce Password</string>
     <string name="update">UPDATE</string>
+    <string name="category_image">category_image</string>
 
     <!-- Account Types-->
     <string-array name="account_types">
