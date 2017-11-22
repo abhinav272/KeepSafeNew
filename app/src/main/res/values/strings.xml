@@ -54,6 +54,7 @@
     <string name="hint_ecommerce_password">E-Commerce Password</string>
     <string name="update">UPDATE</string>
     <string name="category_image">category_image</string>
+    <string name="your_bank_name">Your Bank Name</string>
 
     <!-- Account Types-->
     <string-array name="account_types">
