@@ -25,6 +25,8 @@ import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Abhinav on 13/05/17.
  */
@@ -36,6 +38,7 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     private FloatingActionButton fab;
     private FABRevealMenu fabRevealMenu;
     private HomePresenter mPresenter;
+    private View sharedElementView;
 
     @Override
     public void onAttach(Context context) {
@@ -125,7 +128,8 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
     }
 
     @Override
-    public void delegateClickEvent(int position) {
+    public void delegateClickEvent(View view, int position) {
+        sharedElementView = view;
         onCTAClicked(position);
     }
 
@@ -136,8 +140,10 @@ public class HomeFragment extends BaseFragment implements HomeView, OnFABMenuSel
 
     @Override
     public void navigateToCategoryFragment(int position) {
-        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), CategoryFragment.getInstance(position),
-                R.id.frame_container, CategoryFragment.class.getSimpleName());
+        ((BaseActivity) context).addFragmentWithBackStackAndSharedElement(getFragmentManager(),
+                this, CategoryFragment.getInstance(position),
+                R.id.frame_container, CategoryFragment.class.getSimpleName(), sharedElementView);
+        sharedElementView = null;
     }
 
     @Override
