@@ -2,8 +2,8 @@ package com.abhinav.keepsafe;
 
 import android.app.Fragment;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.abhinav.keepsafe.base.IBaseView;
 
@@ -13,11 +13,11 @@ import com.abhinav.keepsafe.base.IBaseView;
 public class BaseFragment extends Fragment implements IBaseView {
 
     public void setupToolbar(Toolbar toolbar) {
-        getActivity().setActionBar(toolbar);
+        ((BaseActivity) getActivity()).setSupportActionBar(toolbar);
     }
 
     public void setToolbarTitle(int titleResId) {
-        getActivity().getActionBar().setTitle(titleResId);
+        ((BaseActivity) getActivity()).getSupportActionBar().setTitle(titleResId);
     }
 
     @Override
