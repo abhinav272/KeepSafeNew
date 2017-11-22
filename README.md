@@ -12,6 +12,7 @@ KeepSafe remembers all your passwords for you, and keeps them safe and secure be
 1) Auto Password fill on fields.
 2) Export data securely, Import from existing file system.
 3) Flying Bubble to access passwords from home screen directly.
+4) Card specific module
 
 ## Libraries
 
