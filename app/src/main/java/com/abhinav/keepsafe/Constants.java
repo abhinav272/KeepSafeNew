@@ -31,4 +31,10 @@ public final class Constants {
         public static final String T_SOCIAL_NETWORK = "t_social_network";
         public static final String T_ECOMMERCE = "t_ecommerce";
     }
+
+    public static final class Defaults {
+
+        public static final long MOVE_DEFAULT_TIME = 1000;
+        public static final long FADE_DEFAULT_TIME = 300;
+    }
 }
