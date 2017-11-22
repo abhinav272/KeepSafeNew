@@ -6,11 +6,10 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toolbar;
 
 import com.abhinav.keepsafe.BaseActivity;
 import com.abhinav.keepsafe.BaseFragment;
@@ -21,7 +20,6 @@ import com.abhinav.keepsafe.home.category.bank.AddBankFragment;
 import com.abhinav.keepsafe.home.category.ecommerce.AddECommerceFragment;
 import com.abhinav.keepsafe.home.category.email.AddEmailFragment;
 import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkFragment;
-import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkPresenter;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
