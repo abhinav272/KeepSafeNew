@@ -13,9 +13,7 @@
         android:id="@+id/rv_ctas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp" />
+        android:layout_below="@+id/toolbar" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

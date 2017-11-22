@@ -13,6 +13,7 @@ import java.util.List;
  */
 
 public interface CategoryView extends IBaseView {
+    void setupHeaderImage(int position);
     void showToolbarTitle(int position);
     void popFragmentOnInvalidChoice();
     void showBankListing(List<Bank> value);

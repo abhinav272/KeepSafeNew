@@ -51,6 +51,8 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
     Unbinder unbinder;
     @BindView(R.id.iv_no_view)
     ImageView ivNoView;
+    @BindView(R.id.iv_header)
+    ImageView ivHeader;
     private Context context;
     private CategoryPresenter mPresenter;
     private int position;
@@ -84,10 +86,32 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         super.onViewCreated(view, savedInstanceState);
         setupToolbar(toolbar);
         showToolbarTitle(position);
+        setupHeaderImage(position);
         rvCategoryItems.setLayoutManager(new LinearLayoutManager(context));
         mPresenter.initView();
         mPresenter.fetchCategoryListing(position);
         view.setOnTouchListener((v, event) -> true);
+    }
+
+    @Override
+    public void setupHeaderImage(int position) {
+        switch (position) {
+            case 0:
+                ivHeader.setBackgroundResource(R.drawable.bank_logo);
+                break;
+            case 1:
+                ivHeader.setBackgroundResource(R.drawable.email_logo);
+                break;
+            case 2:
+                ivHeader.setBackgroundResource(R.drawable.socialmedial_logo);
+                break;
+            case 3:
+                ivHeader.setBackgroundResource(R.drawable.ecom_logo);
+                break;
+            case 4:
+                ivHeader.setBackgroundResource(R.drawable.others_logo);
+                break;
+        }
     }
 
     @Override
