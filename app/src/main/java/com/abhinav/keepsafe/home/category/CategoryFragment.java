@@ -78,6 +78,7 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
         unbinder = ButterKnife.bind(this, view);
         mPresenter = new CategoryPresenter(this);
         position = getArguments().getInt(Constants.ExtrasKey.SELECTED_CATEGORY_POSITION, -1);
+        ivHeader.setTransitionName(getString(R.string.category_image) + position);
         return view;
     }
 

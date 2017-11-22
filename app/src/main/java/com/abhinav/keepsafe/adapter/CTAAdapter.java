@@ -23,7 +23,7 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
     private OnItemClick onItemClick;
 
     public interface OnItemClick{
-        void delegateClickEvent(int position);
+        void delegateClickEvent(View view, int position);
     }
 
     public CTAAdapter(Context context, List<String> ctaLists, OnItemClick onItemClick) {
@@ -60,7 +60,8 @@ public class CTAAdapter extends RecyclerView.Adapter<CTAViewHolder> {
                 break;
         }
         holder.tvCTATitle.setText(getItem(position));
-        holder.ivCTAImage.setOnClickListener(v -> onItemClick.delegateClickEvent(position));
+        holder.ivCTAImage.setTransitionName(context.getString(R.string.category_image) + position);
+        holder.ivCTAImage.setOnClickListener(v -> onItemClick.delegateClickEvent(v, position));
     }
 
     @Override
