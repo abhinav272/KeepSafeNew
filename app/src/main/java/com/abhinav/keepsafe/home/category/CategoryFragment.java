@@ -27,7 +27,7 @@ import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
 import com.abhinav.keepsafe.entities.SocialNetwork;
-import com.abhinav.keepsafe.home.category.bank.EditBankFragment;
+import com.abhinav.keepsafe.home.category.bank.ShowBankFragment;
 import com.abhinav.keepsafe.home.category.ecommerce.EditECommerceFragment;
 import com.abhinav.keepsafe.home.category.email.EditEmailFragment;
 import com.abhinav.keepsafe.home.category.socialnetwork.EditSocialNetworkFragment;
@@ -205,48 +205,9 @@ public class CategoryFragment extends BaseFragment implements CategoryView, Adap
     }
 
     @Override
-    public void showBankItem(Bank bank) {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
-        AlertDialog alertDialog = dialogBuilder.create();
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.layout_view_edit_bank, null);
-        alertDialog.setView(view);
-        setupBankDetails(view, bank, alertDialog);
-        alertDialog.show();
-    }
-
-    private void setupBankDetails(View view, Bank bank, AlertDialog dialog) {
-        TextView tvBankName = view.findViewById(R.id.tv_bank_name);
-        EditText tvAccountNumber = view.findViewById(R.id.et_account_number);
-        EditText tvDebitCardNumber = view.findViewById(R.id.et_debit_card_number);
-        EditText tvCreditCardNumber = view.findViewById(R.id.et_credit_card_number);
-        EditText tvDebitCardPin = view.findViewById(R.id.et_debit_card_pin);
-        EditText tvCreditCardPin = view.findViewById(R.id.et_credit_card_pin);
-        EditText tvNetBankingUserId = view.findViewById(R.id.et_net_banking_id);
-        EditText tvNetBankingPassword = view.findViewById(R.id.et_net_banking_password);
-        ImageView ivEdit = view.findViewById(R.id.iv_edit);
-
-        tvBankName.setText(bank.getBankName());
-        tvAccountNumber.setText(bank.getAccountNumber());
-        tvDebitCardNumber.setText(bank.getDebitCardNumber());
-        tvCreditCardNumber.setText(bank.getCreditCardNumber());
-        tvDebitCardPin.setText(bank.getDebitCardPin());
-        tvCreditCardPin.setText(bank.getCreditCardPin());
-        tvNetBankingUserId.setText(bank.getCustomerId());
-        tvNetBankingPassword.setText(bank.getNetBankingPassword());
-
-        ivEdit.setOnClickListener(v -> {
-            dialog.dismiss();
-            mPresenter.onEditBankClicked(bank.getId());
-        });
-
-    }
-
-    @Override
-    public void addEditBankFragment(int bankId) {
-        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(),
-                EditBankFragment.getInstance(bankId), R.id.frame_container,
-                EditBankFragment.class.getSimpleName());
+    public void showBankItem(int bankId) {
+        ((BaseActivity) context).addFragmentWithBackStack(getFragmentManager(), ShowBankFragment.getInstance(bankId),
+                R.id.frame_container, ShowBankFragment.class.getSimpleName());
     }
 
     @Override
