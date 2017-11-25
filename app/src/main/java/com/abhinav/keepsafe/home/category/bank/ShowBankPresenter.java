@@ -23,7 +23,7 @@ public class ShowBankPresenter extends BasePresenter<ShowBankView> implements Ba
             if (bank != null) {
                 getView().showBankDetails(bank);
             } else {
-                getView().showSnackbar("Some error occurred");
+                getView().popFragment();
             }
         };
     }

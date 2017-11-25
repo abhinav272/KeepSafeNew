@@ -175,6 +175,12 @@ public class ShowBankFragment extends BaseFragment implements ShowBankView, AppB
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        mPresenter.detachView();
+    }
+
+    @Override
+    public void popFragment() {
+        getFragmentManager().popBackStackImmediate();
     }
 
     @Override
