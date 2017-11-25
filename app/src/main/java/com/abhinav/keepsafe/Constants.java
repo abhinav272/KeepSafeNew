@@ -33,8 +33,8 @@ public final class Constants {
     }
 
     public static final class Defaults {
-
-        public static final long MOVE_DEFAULT_TIME = 1000;
-        public static final long FADE_DEFAULT_TIME = 300;
+        public static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR = 0.9f;
+        public static final float PERCENTAGE_TO_HIDE_TITLE_DETAILS = 0.3f;
+        public static final int ALPHA_ANIMATIONS_DURATION = 200;
     }
 }
