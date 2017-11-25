@@ -23,7 +23,7 @@ class EditEmailPresenter extends BasePresenter<EditEmailView> implements BaseMod
             if (email != null) {
                 getView().showEmailDetails(email);
             } else {
-                getView().showToastShort("Unable to fetch Email Account");
+                getView().popFragment();
             }
         };
     }
