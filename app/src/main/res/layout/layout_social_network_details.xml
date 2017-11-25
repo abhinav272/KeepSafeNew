@@ -9,20 +9,6 @@
     android:paddingBottom="20dp">
 
     <TextView
-        android:id="@+id/tv_platform_name"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Facebook" />
-
-    <TextView
         android:id="@+id/tv_email_id_used"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
