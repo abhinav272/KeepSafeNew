@@ -23,7 +23,7 @@ class EditSocialNetworkPresenter extends BasePresenter<EditSocialNetworkView> im
             if (socialNetwork != null) {
                 getView().showSocialNetworkDetails(socialNetwork);
             } else {
-                getView().showToastShort("Unable to fetch Social Network details");
+                getView().popFragment();
             }
         };
     }
