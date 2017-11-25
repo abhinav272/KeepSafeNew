@@ -115,7 +115,7 @@ public class CategoryPresenter extends BasePresenter<CategoryView> implements Ca
                 break;
             case 0:
                 if (bankListLiveData != null && bankListLiveData.getValue() != null)
-                    getView().showBankItem(bankListLiveData.getValue().get(itemPosition));
+                    getView().showBankItem(bankListLiveData.getValue().get(itemPosition).getId());
                 break;
             case 1:
                 if (emailListLiveData != null && emailListLiveData.getValue() != null) {
