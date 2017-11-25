@@ -119,37 +119,21 @@ public class CategoryPresenter extends BasePresenter<CategoryView> implements Ca
                 break;
             case 1:
                 if (emailListLiveData != null && emailListLiveData.getValue() != null) {
-                    getView().showEmailItem(emailListLiveData.getValue().get(itemPosition));
+                    getView().showEmailItem(emailListLiveData.getValue().get(itemPosition).getId());
                 }
                 break;
             case 2:
                 if (socialNetworkListLiveData != null && socialNetworkListLiveData.getValue() != null) {
-                    getView().showSocialNetworkItem(socialNetworkListLiveData.getValue().get(itemPosition));
+                    getView().showSocialNetworkItem(socialNetworkListLiveData.getValue().get(itemPosition).getId());
                 }
                 break;
             case 3:
                 if (eCommerceListLiveData != null && eCommerceListLiveData.getValue() != null) {
-                    getView().showECommerceItem(eCommerceListLiveData.getValue().get(itemPosition));
+                    getView().showECommerceItem(eCommerceListLiveData.getValue().get(itemPosition).getId());
                 }
                 break;
             case 4:
                 break;
         }
-    }
-
-    void onEditBankClicked(int bankId) {
-        getView().addEditBankFragment(bankId);
-    }
-
-    public void onEditEmailClicked(int emailId) {
-        getView().addEditEmailFragment(emailId);
-    }
-
-    public void onEditSocialNetworkClicked(int socialNetworkId) {
-        getView().addEditSocialNetworkFragment(socialNetworkId);
-    }
-
-    public void onEditECommerceClicked(int eCommerceId) {
-        getView().addEditECommerceFragment(eCommerceId);
     }
 }

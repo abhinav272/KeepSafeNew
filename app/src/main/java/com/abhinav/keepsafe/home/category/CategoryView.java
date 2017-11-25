@@ -22,10 +22,7 @@ public interface CategoryView extends IBaseView {
     void showSocialNetworkListings(List<SocialNetwork> socialNetworks);
     void showECommerceListings(List<ECommerce> eCommerces);
     void showBankItem(int bankId);
-    void showEmailItem(Email email);
-    void showSocialNetworkItem(SocialNetwork socialNetwork);
-    void showECommerceItem(ECommerce eCommerce);
-    void addEditEmailFragment(int emailId);
-    void addEditSocialNetworkFragment(int socialNetworkId);
-    void addEditECommerceFragment(int eCommerceId);
+    void showEmailItem(int emailId);
+    void showSocialNetworkItem(int socialNetworkId);
+    void showECommerceItem(int eCommerceId);
 }
