@@ -22,7 +22,9 @@ class EditECommercePresenter extends BasePresenter<EditECommerceView> implements
         eCommerceObserver = eCommerce -> {
             if (eCommerce != null)
                 getView().showECommerceDetails(eCommerce);
-            else getView().showToastShort("Unable to fetch e-Commerce account");
+            else {
+                getView().popFragment();
+            }
         };
     }
 

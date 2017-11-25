@@ -92,6 +92,7 @@ public class EditECommerceFragment extends BaseFragment implements EditECommerce
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        presenter.detachView();
     }
 
     @OnClick({R.id.fab_delete, R.id.fab_save})
