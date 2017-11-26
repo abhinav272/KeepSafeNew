@@ -94,7 +94,7 @@
             android:gravity="center"
             android:text="@string/save"
             android:textSize="18sp"
-            android:background="@drawable/bg_rounded_border"
+            android:background="@drawable/bg_rounded_border_selected"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ecommerce_user_name"/>
