@@ -81,7 +81,7 @@ public class AddECommerceFragment extends BaseFragment implements AddECommerceVi
         setupToolbar(toolbar);
         toolbar.setTitle(null);
         appbar.addOnOffsetChangedListener(this);
-        ivHeader.setImageResource(R.drawable.img_bank_header);
+        ivHeader.setImageResource(R.drawable.img_ecommerce_header);
         collapsing.setTitle("Add E-Commerce Details");
     }
 
