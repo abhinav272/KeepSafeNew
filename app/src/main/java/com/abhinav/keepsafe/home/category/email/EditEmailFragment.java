@@ -109,7 +109,7 @@ public class EditEmailFragment extends BaseFragment implements EditEmailView {
         this.email = email;
         tvEmailId.setText(email.getEmailId());
         etRecoveryEmail.setText(email.getRecoveryEmail());
-        etPlatformName.setText(email.getRecoveryEmail());
+        etPlatformName.setText(email.getPlatformName());
         etEmailPassword.setText(email.getEmailPassword());
     }
 }
