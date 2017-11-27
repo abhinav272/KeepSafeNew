@@ -218,5 +218,6 @@ public class ShowSocialNetworkFragment extends BaseFragment implements ShowSocia
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        mPresenter.detachView();
     }
 }
