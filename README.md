@@ -21,3 +21,5 @@ KeepSafe remembers all your passwords for you, and keeps them safe and secure be
 3. [RxJava2](https://github.com/ReactiveX/RxJava)
 4. [LiveData](https://developer.android.com/topic/libraries/architecture/livedata.html)
 5. [Constraint Layout](https://developer.android.com/training/constraint-layout/index.html)
+6. [Coordinator Layout](https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html)
+7. [AppBarLayoutBehavior](https://developer.android.com/reference/android/support/design/widget/AppBarLayout.Behavior.html)
