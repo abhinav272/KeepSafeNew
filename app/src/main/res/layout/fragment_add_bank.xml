@@ -1,191 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/container"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_bank_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp">
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_bank_logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_rounded"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_bank_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_bank_name"
-            android:singleLine="true"
             android:inputType="textCapCharacters"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bank_logo" />
+            android:singleLine="true"
+            android:textSize="16sp" />
 
-        <Spinner
-            android:id="@+id/tv_account_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:entries="@array/account_types"
-            android:gravity="center"
-            android:hint="@string/hint_bank_name"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_bank_name" />
+    </android.support.design.widget.TextInputLayout>
 
-        <EditText
+
+    <Spinner
+        android:id="@+id/tv_account_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:entries="@array/account_types"
+        android:gravity="center"
+        android:hint="@string/hint_bank_name"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_bank_name" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_account_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_account_type">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_account_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_account_number"
             android:inputType="number"
             android:singleLine="true"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_account_type" />
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_debit_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_account_number">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_debit_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_debit_card_number"
             android:inputType="number"
-            android:singleLine="true"
-            android:textSize="12sp"
             android:maxLength="16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_account_number" />
+            android:singleLine="true"
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_credit_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_debit_card_number">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_credit_card_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_credit_card_number"
             android:inputType="number"
-            android:singleLine="true"
-            android:textSize="12sp"
             android:maxLength="16"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_number" />
+            android:singleLine="true"
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_debit_card_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_credit_card_number">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_debit_card_pin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_debit_card_pin"
             android:inputType="numberPassword"
             android:maxLength="6"
             android:singleLine="true"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_number" />
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_credit_card_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_debit_card_pin">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_credit_card_pin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_credit_card_pin"
             android:inputType="numberPassword"
             android:maxLength="6"
             android:singleLine="true"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_debit_card_pin" />
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_netbanking_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_credit_card_pin">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_net_banking_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_net_banking_id"
             android:singleLine="true"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_credit_card_pin" />
+            android:textSize="16sp" />
 
-        <EditText
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_netbanking_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:theme="@style/MyEditText"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/MyErrorText"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_netbanking_id">
+
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/tv_net_banking_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
             android:hint="@string/hint_net_banking_password"
             android:inputType="textPassword"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_id" />
+            android:textSize="16sp" />
 
+    </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tv_save"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/bg_rounded_border"
-            android:gravity="center"
-            android:text="@string/save"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_net_banking_password" />
+</android.support.constraint.ConstraintLayout>
 
-
-    </android.support.constraint.ConstraintLayout>
-
-</ScrollView>
 
