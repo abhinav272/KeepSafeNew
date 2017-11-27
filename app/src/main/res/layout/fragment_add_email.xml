@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_email_id"
+            android:inputType="textEmailAddress"
             android:singleLine="true"
             android:textSize="16sp" />
 
@@ -75,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_platform_name"
-            android:inputType="textEmailAddress"
+            android:inputType="textCapCharacters"
             android:singleLine="true"
             android:textSize="16sp" />
 
