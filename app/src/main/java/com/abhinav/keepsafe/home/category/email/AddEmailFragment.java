@@ -100,7 +100,7 @@ public class AddEmailFragment extends BaseFragment implements AddEmailView, AppB
         toolbar.setTitle(null);
         appbar.addOnOffsetChangedListener(this);
         ivHeader.setImageResource(R.drawable.img_email_header);
-        collapsing.setTitle("Add E-Commerce Details");
+        collapsing.setTitle("Add Email Details");
     }
 
     @Override
