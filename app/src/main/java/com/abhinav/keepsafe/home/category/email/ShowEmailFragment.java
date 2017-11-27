@@ -71,7 +71,6 @@ public class ShowEmailFragment extends BaseFragment implements ShowEmailView, Ap
     private boolean mIsTheTitleVisible = false;
     private boolean mIsTheTitleContainerVisible = true;
     private EditText etPlatformName, etRecoveryMail, etPassword;
-    private TextView tvEmailId;
     private ShowEmailPresenter mPresenter;
 
     public static ShowEmailFragment getInstance(int emailId) {
@@ -132,7 +131,6 @@ public class ShowEmailFragment extends BaseFragment implements ShowEmailView, Ap
     }
 
     private void initEmailViewStub(View view) {
-        tvEmailId = view.findViewById(R.id.tv_email_id);
         etPlatformName = view.findViewById(R.id.et_platform_name);
         etRecoveryMail = view.findViewById(R.id.et_recovery_email);
         etPassword = view.findViewById(R.id.et_email_password);
@@ -222,5 +220,6 @@ public class ShowEmailFragment extends BaseFragment implements ShowEmailView, Ap
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+        mPresenter.detachView();
     }
 }
