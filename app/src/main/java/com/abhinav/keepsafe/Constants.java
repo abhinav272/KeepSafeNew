@@ -36,5 +36,6 @@ public final class Constants {
         public static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR = 0.9f;
         public static final float PERCENTAGE_TO_HIDE_TITLE_DETAILS = 0.3f;
         public static final int ALPHA_ANIMATIONS_DURATION = 200;
+        public static final int PERCENTAGE_TO_SHOW_IMAGE = 80;
     }
 }
