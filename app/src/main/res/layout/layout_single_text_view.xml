@@ -9,6 +9,8 @@
         android:textSize="30sp"
         android:gravity="center_vertical"
         android:paddingStart="20dp"
+        android:clickable="true"
+        android:focusable="true"
         android:textColor="@color/mine_shaft"
         android:layout_width="match_parent"
         android:layout_height="80dp" />
