@@ -12,33 +12,19 @@ KeepSafe remembers all your passwords for you, and keeps them safe and secure be
 
 ## Screenshots
 
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789935.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789961.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789978.png" />
+<img height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789935.png" /> <img height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789961.png" />  <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511789978.png" />
 
 Adding Screen
 
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791873.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791880.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791885.png" />
+<img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791873.png" /> <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791880.png" /> <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511791885.png" />
 
 Viewing Screen
 
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790040.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790055.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790066.png" />
+<img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790040.png" /> <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790055.png" /> <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790066.png" />
 
 Editing Screen
 
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790105.png" />
-
-<img alt="KeepSafeNew Main Page" height="450px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790121.png" />
+<img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790105.png" /> <img alt="KeepSafeNew Main Page" height="400px" src="https://raw.githubusercontent.com/abhinav272/KeepSafeNew/master/Screenshot_1511790121.png" />
 
 
 --------------------
