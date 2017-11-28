@@ -1,6 +1,5 @@
 package com.abhinav.keepsafe.home.category;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,9 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.abhinav.keepsafe.BaseActivity;
 import com.abhinav.keepsafe.BaseFragment;
@@ -27,12 +24,10 @@ import com.abhinav.keepsafe.entities.Bank;
 import com.abhinav.keepsafe.entities.ECommerce;
 import com.abhinav.keepsafe.entities.Email;
 import com.abhinav.keepsafe.entities.SocialNetwork;
-import com.abhinav.keepsafe.home.category.bank.ShowBankFragment;
-import com.abhinav.keepsafe.home.category.ecommerce.EditECommerceFragment;
-import com.abhinav.keepsafe.home.category.ecommerce.ShowECommerceFragment;
-import com.abhinav.keepsafe.home.category.email.ShowEmailFragment;
-import com.abhinav.keepsafe.home.category.socialnetwork.EditSocialNetworkFragment;
-import com.abhinav.keepsafe.home.category.socialnetwork.ShowSocialNetworkFragment;
+import com.abhinav.keepsafe.home.category.bank.show.ShowBankFragment;
+import com.abhinav.keepsafe.home.category.ecommerce.show.ShowECommerceFragment;
+import com.abhinav.keepsafe.home.category.email.show.ShowEmailFragment;
+import com.abhinav.keepsafe.home.category.socialnetwork.show.ShowSocialNetworkFragment;
 
 import java.util.List;
 

@@ -16,16 +16,14 @@ import com.abhinav.keepsafe.BaseFragment;
 import com.abhinav.keepsafe.R;
 import com.abhinav.keepsafe.adapter.CTAAdapter;
 import com.abhinav.keepsafe.home.category.CategoryFragment;
-import com.abhinav.keepsafe.home.category.bank.AddBankFragment;
-import com.abhinav.keepsafe.home.category.ecommerce.AddECommerceFragment;
-import com.abhinav.keepsafe.home.category.email.AddEmailFragment;
-import com.abhinav.keepsafe.home.category.socialnetwork.AddSocialNetworkFragment;
+import com.abhinav.keepsafe.home.category.bank.add.AddBankFragment;
+import com.abhinav.keepsafe.home.category.ecommerce.add.AddECommerceFragment;
+import com.abhinav.keepsafe.home.category.email.add.AddEmailFragment;
+import com.abhinav.keepsafe.home.category.socialnetwork.add.AddSocialNetworkFragment;
 import com.hlab.fabrevealmenu.listeners.OnFABMenuSelectedListener;
 import com.hlab.fabrevealmenu.view.FABRevealMenu;
 
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 /**
  * Created by Abhinav on 13/05/17.
