@@ -25,7 +25,7 @@
 
         <service
             android:name=".service.KSTileService"
-            android:icon="@drawable/ic_keepsafe"
+            android:icon="@drawable/ic_keepsafe_tile_disabled"
             android:label="@string/tile_service_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
